@@ -16,14 +16,15 @@
 >フィードバックやお問い合わせはすべて helpdesk@adlnet.gov までお送りください。
 <details>
 <summary>en</summary>
+
 #### License
   
 "Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
   
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
-  
+
 This document was authored by members of the Experience API Working Group (see list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative.  
-  
+
 Please send all feedback and inquiries to helpdesk@adlnet.gov  
 </details>
 
@@ -117,24 +118,25 @@ Please send all feedback and inquiries to helpdesk@adlnet.gov
 
 Experience API (xAPI) は、学習経験の文書化と伝達を容易にすることを目的とした技術仕様です。学習経験を記述する構造を指定し、これらの記述を電子的に交換する方法を定義します。
 
-xAPI は、Advanced Distributed Learning (ADL) イニシアチブの取り組みです。 ADL は、米国での研修と教育の管理と提供を標準化・近代化するために1997年に設立されました。それ以来、正規に構造化されたコンピューターベースの研修にとどまらない、個人の学習経験を追跡する必要性がますます認識されるようになりました。
+xAPI は、Advanced Distributed Learning (ADL) イニシアチブの取り組みです。 ADLは、米国での研修と教育の管理と提供を標準化・近代化するために1997年に設立されました。それ以来、正規に構造化されたコンピューターベースの研修にとどまらない、個人の学習経験を追跡する必要性がますます認識されるようになりました。
 候補者のポジション適性やさまざまなタスク遂行能力を評価する際には、オンラインとオフラインの両方で、正規および非正規問わず幅広い学習経験を考慮する必要があります。多くの場合、その情報はさまざまなソースに散らばっています。
 
-こうしたニーズから、xAPI コミュニティと仕様が生まれました。 xAPI は次のことを前提としています：
+こうしたニーズから、xAPIコミュニティと仕様が生まれました。 xAPIは次のことを前提としています：
   * さまざまなソース、プラットフォーム、テクノロジーに分散している学習経験とその成果に関する情報を分析できる必要がある。
   * この情報を収集、保存、交換するための一般的に受け入れられているフレームワークを開発することが、これを達成する最善の方法である。
 
-xAPI の目標は次のとおりです。
+xAPIの目標は次のとおりです。
 
 * さまざまなコンテキスト、プラットフォーム、テクノロジーにわたって記録された学習経験とその結果を理解し比較しやすくすること。
 * 学習体験に関する情報を作成、収集、保存、および処理するサービスの相互運用性を最大化すること。
 * この仕様に準拠して実装するアプリケーションを構築したい人へのガイドを提供すること。
 * この仕様への適合性をテストできる基準を提供すること。
 
-以下のドキュメントは、これらの目標を達成するために設計された xAPI 仕様を定めたものです。 
+以下のドキュメントは、これらの目標を達成するために設計された xAPI仕様を定めたものです。 
 
 <details>
 <summary>en</summary>
+
 The Experience API (xAPI) is a technical specification that aims to facilitate the documentation and communication of 
 learning experiences. It specifies a structure to describe learning experiences and defines how these descriptions can 
 be exchanged electronically.
@@ -145,28 +147,28 @@ growing realization of the need to track learning experiences of individuals bey
 In assessing candidates' suitability for positions or their capability for performing various tasks, there is a need 
 to consider a wide range of formal and informal learning experiences, both on and offline.  That information, 
 more often than not is scattered across a wide variety of sources.
-  
+
 Out of this perceived need, the xAPI community and specification were born. xAPI assumes that:
   * There is a need to be able to analyze information about learning experiences and their outcomes distributed across 
   a wide variety of sources, platforms and technologies.
   * Developing a commonly-accepted framework for gathering, storing and exchanging this information represents the 
   best way of achieving this.
-  
+
 The goals of the xAPI are:
-  
+
 * To make it easier to understand and compare learning experiences and their outcomes recorded across a wide 
 variety of contexts, platforms and technologies.
 * To maximize interoperability of services which create, gather, store and process information about learning experiences.
 * To provide a guide to those who want to build applications that conform to and implement this specification.
 * To provide criteria against which conformance to this specification can be tested.
-  
+
 The document that follows sets out the xAPI specification which is designed to achieve these goals. 
 </details>
 
 <a name="readingguidelines"></a>
 ## 2.0 How to Use This Document
 
-この文書は、Experience API の実装方法を説明する決定的な文書です。この技術を実装する個人や組織向けに特別に執筆された技術文書で、互いに独立して相互運用可能なツール、システム、サービスを開発することを目的としています。
+この文書は、Experience APIの実装方法を説明する決定的な文書です。この技術を実装する個人や組織向けに特別に執筆された技術文書で、互いに独立して相互運用可能なツール、システム、サービスを開発することを目的としています。
 
 できる限り、この文書で使用される言葉と書式は、技術者ではない読者に_配慮_しています。様々なツール、システム、サービスがこのあとに説明する仕様に基づいているためです。こうした理由から、Experience APIの特定の側面で高次の概要を説明するセクションでは、**説明**または**根拠**というラベルを付けています。また**要件**、**詳細**、あいは**例**と表記されている項目は、より技術的なものです。
 
@@ -178,6 +180,7 @@ The document that follows sets out the xAPI specification which is designed to a
 
 <details>
 <summary>en</summary>
+
 This is a definitive document which describes how the Experience API is to be implemented. It is a technical document authored specifically for individuals and organizations implementing this technology with the intent of such individuals developing interoperable tools, systems and services that are independent of each other and interoperable with each other.  
 
 Whenever possible, the language and formatting used in this document is intended to be _considerate_ of non-technical readers because various tools, systems and services are based on the specification set described below. For this reason, sections that provide a _high-level overview_ of a given facet of the Experience API are labeled **description** or **rationale**. Items in this document labeled as **requirements**, **details** or **examples** are more technical.
@@ -192,22 +195,16 @@ Part three of this specification sets out the transfer methods that must be used
 <a name="def-must-should-may"></a>
 ### 2.1 MUST / SHOULD / MAY 
 
+xAPI仕様の準拠には，MUST、SHOULD、MAYという用語で識別される3つの義務レベルがあります。MUST (または MUST NOT)要件の実装に失敗したサービスまたはシステムは、非適合になります。SHOULD要件を満たさないことは、適合性に違反しませんが、仕様の推奨事項には反します。MAYは、適合性に影響を与えずに開発者が決定するオプションであることを示します。これらの用語を要件の文言以外で使用することは、要件を指定することにならないので、可能な限り避けてください。MUST、SHOULD、MAY、MUST NOT、および SHOULD NOT の完全な定義は、[RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) に記載されています。
+
+SHOULD に続くアスタリスク* の使用は、非常に強い推奨事項であることを示しています。これらの推奨事項は、将来のバージョンでMUST要件になる予定のものです。これらの推奨事項に従わないと、相互運用性がリスクにさらされたり、推奨事項の詳細によっては他のさまざまな問題が発生したりする可能性があります。これらの推奨事項は、破壊的変更になるため、今回のバージョンではMUST要件にはなりません。 xAPIワーキンググループは、これらの要件をMUST要件であるかのように実装することを採用者に強く推奨しますが、実装しない可能性のある他の採用者も引き続きサポートします。
 
 <details>
 <summary>en</summary>
-There are three levels of obligation with regards to conformance to the xAPI specification identified by the terms 
-MUST, SHOULD and MAY. A service or system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. 
-Failing to meet a SHOULD requirement is not a violation of conformity, but goes against the recommendations of the specification. 
-MAY indicates an option, to be decided by the developer with no consequences for conformity. Usage 
-of these terms outside of requirement language does not designate a requirement and is avoided whenever possible. 
-Complete definitions of MUST, SHOULD, MAY, MUST NOT and SHOULD NOT are found in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-The use of an asterisk* following SHOULD indicates a very strong recommendation. It is planned that these 
-recommendations will become MUST requirements in a future version. Not following these recommendations could 
-risk interoperability and and/or lead to various other issues depending on the specifics of the recommendation. 
-These recommendations cannot be MUST requirements within this version as these would be breaking changes. 
-The xAPI Working Group strongly encourages adopters to implement these requirements as though they were MUST 
-requirements, while continuing to support other adopters that might not do so.
+There are three levels of obligation with regards to conformance to the xAPI specification identified by the terms MUST, SHOULD and MAY. A service or system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but goes against the recommendations of the specification. MAY indicates an option, to be decided by the developer with no consequences for conformity. Usage of these terms outside of requirement language does not designate a requirement and is avoided whenever possible. Complete definitions of MUST, SHOULD, MAY, MUST NOT and SHOULD NOT are found in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+
+The use of an asterisk* following SHOULD indicates a very strong recommendation. It is planned that these recommendations will become MUST requirements in a future version. Not following these recommendations could risk interoperability and and/or lead to various other issues depending on the specifics of the recommendation. These recommendations cannot be MUST requirements within this version as these would be breaking changes. The xAPI Working Group strongly encourages adopters to implement these requirements as though they were MUST requirements, while continuing to support other adopters that might not do so.
 </details>
 
 <a name="interpret-text-table"></a>
