@@ -170,7 +170,7 @@ The document that follows sets out the xAPI specification which is designed to a
 
 この文書は、Experience APIの実装方法を説明する決定的な文書です。この技術を実装する個人や組織向けに特別に執筆された技術文書で、互いに独立して相互運用可能なツール、システム、サービスを開発することを目的としています。
 
-この文書で使用される用語や書式は、できる限り、技術者ではない読者に _配慮_ しています。様々なツール、システム、サービスがこのあとに説明する仕様に基づいているためです。こうした理由から、Experience APIの特定の側面で高次の概要を説明するセクションでは、**説明**または**根拠**というラベルを付けています。また**要件**、**詳細**、あいは**例**と表記されている項目は、より技術的なものです。
+この文書で使用される用語や書式は、できる限り、技術者ではない読者に _配慮_ しています。様々なツール、システム、サービスがこのあとに説明する仕様に基づいているためです。こうした理由から、Experience APIの特定局面で高次の概要を説明するセクションでは、**説明**または**根拠**というラベルを付けています。また**要件**、**詳細**、あいは**例**と表記されている項目は、より技術的なものです。
 
 仕様書は3つのパートに分かれています。仕様のパート1 はこの導入部です。このパート1では、本仕様の背景、高次の要約、残りの部分の読み方について説明します。
 
@@ -210,31 +210,28 @@ The use of an asterisk* following SHOULD indicates a very strong recommendation.
 <a name="interpret-text-table"></a>
 ### 2.2 Guidelines for Interpreting Descriptive Text and Tables
 
+経験則として、ガイドラインの記述が技術的または要件であると思われた場合は、そのように解釈してください。これは特に、長くてより詳細な説明や表の場合に当てはまります。それらがそれぞれ、要件リストに分解されると直感的でなくなったり、長くなるのです。
+
+プロパティ、パラメータなどのリストを要件定義するため、仕様全体をとおして表が使用されます。表は、どのプロパティが必須、推奨、オプションであるかを定義しています。一般に「オプション」概念は、オブジェクトを作成するサービスに関連する一方で、オブジェクトを受信して​​解釈するサービスは、そのオブジェクトのすべてのプロパティを解釈できる必要があります。多くの場合、データはすべてのコンテキストに関連するとは限らないため、プロパティは省略可能です。データが特定のコンテキストに関連している場合には、プロパティの入力が期待されます。
+
+オプションのプロパティまたはパラメータに、推奨または必須のプロパティをもつオブジェクトが含まれている場合、これら推奨または必須のプロパティは、それらを含むオプションのプロパティまたはパラメータが使用されている場合のみ推奨/必須になります。
+
+実装を説明するために、仕様全体と付録に例を示します。これらの内容は、仕様の要件を説明するための架空のものであり、例で使用される特定の学習経験を追跡するためのベストプラクティス・アプローチを常に説明しているとは限りません。例は、要件の解釈を伝えるためには使用できますが、要件よりも優先されることは意図していません。
+
+仕様書に実装の特定局面に関する要件が含まれていない場合、その詳細は、この仕様書の範囲外であると考えられます。賢明なアプローチを決定するのは実装者次第となります。この仕様は曖昧さを避けるように努めており、ある領域に要件がない場合でも、通常は論理的根拠を提供します。
 
 <details>
 <summary>en</summary>
-As a rule of thumb, if the guideline appears technical or seems to be a requirement, interpret it 
-as such. This is especially true of longer, more, detailed explanations and of tables, each of which would 
-be unintuitive and/or lengthy to dissect into a list of requirements.
 
-Tables are used throughout this specification to define requirements for lists of properties, parameters, etc.
-The tables define which properties are required, recommended and optional. Generally, the notion of "optional" relates to 
-the service creating the object, while services receiving and interpreting the object need to be able to interpret all 
-properties of that object. Often, properties are optional because the data may not be relevant in every context; 
-if the data is relevant in a particular context, then it is expected the property will be populated.
+As a rule of thumb, if the guideline appears technical or seems to be a requirement, interpret it as such. This is especially true of longer, more, detailed explanations and of tables, each of which would be unintuitive and/or lengthy to dissect into a list of requirements.
 
-If an optional property or parameter contains an object with properties that are recommended or required, then 
-these properties are only recommended/required if the property or parameter containing them is used.
+Tables are used throughout this specification to define requirements for lists of properties, parameters, etc. The tables define which properties are required, recommended and optional. Generally, the notion of "optional" relates to the service creating the object, while services receiving and interpreting the object need to be able to interpret all properties of that object. Often, properties are optional because the data may not be relevant in every context; if the data is relevant in a particular context, then it is expected the property will be populated.
 
-Examples are provided throughout the specification and in appendices to illustrate implementation. The content of these 
-examples is fictional in order to illustrate the requirements of the specification and may not always 
-illustrate the best practice approach to tracking the particular learning experience used in the example. Examples 
-can be used to inform interpretation of requirements, but are not intended to take precedence over requirements. 
+If an optional property or parameter contains an object with properties that are recommended or required, then these properties are only recommended/required if the property or parameter containing them is used.
 
-Where the specification does not include requirements relating to a particular facet of implementation, 
-that detail can be considered to be outside of the scope of this specification. It is up to the implementer 
-to determine a sensible approach. This specification tries to avoid vagueness and will usually give a rationale 
-even if there no requirement in a given area.
+Examples are provided throughout the specification and in appendices to illustrate implementation. The content of these examples is fictional in order to illustrate the requirements of the specification and may not always illustrate the best practice approach to tracking the particular learning experience used in the example. Examples can be used to inform interpretation of requirements, but are not intended to take precedence over requirements. 
+
+Where the specification does not include requirements relating to a particular facet of implementation, that detail can be considered to be outside of the scope of this specification. It is up to the implementer to determine a sensible approach. This specification tries to avoid vagueness and will usually give a rationale even if there no requirement in a given area.
 </details>
 
 <a name="json"></a>
@@ -243,6 +240,7 @@ even if there no requirement in a given area.
 
 <details>
 <summary>en</summary>
+
 Serialization is the process of translating data objects and structures into a format for storage or transmission, such that the 
 original data object can be recreated from the resulting serialization. In some cases it might be possible to serialize a piece 
 of data in more than one way. For example, a boolean property with a value corresponding to true might be represented 
@@ -304,6 +302,7 @@ All required properties are required to contain values.
 
 <details>
 <summary>en</summary>
+
 __Activity__: A type of Object making up the "this" in "I did this"; it is something 
 with which an Actor interacted. It can be a unit of instruction, experience, or performance that is 
 to be tracked in meaningful combination with a Verb. Interpretation of Activity is broad, meaning that 
@@ -317,6 +316,7 @@ examples of Activities include a book, an e-learning course, a hike, or a meetin
 
 <details>
 <summary>en</summary>
+
 __Activity Provider (AP)__: Now referred to as a Learning Record Provider. This change differentiates that 
 the activity itself is not always the responsibility of software, rather just the tracking portion is. 
 </details>
@@ -325,6 +325,7 @@ the activity itself is not always the responsibility of software, rather just th
 
 <details>
 <summary>en</summary>
+
 __Actor__: An individual or group representation tracked using Statements performing an action within 
 an Activity.  Is the "I" in "I did this".
 </details>
@@ -333,6 +334,7 @@ an Activity.  Is the "I" in "I did this".
 
 <details>
 <summary>en</summary>
+
 __Application Programming Interface (API)__: A set of rules and standards created to allow access into 
 a software application or tool.  
 </details>
@@ -341,6 +343,7 @@ a software application or tool.
 
 <details>
 <summary>en</summary>
+
 __Authentication__: The concept of verifying identity. Authentication allows interactions between two 
 "trusted" parties.
 </details>
@@ -349,6 +352,7 @@ __Authentication__: The concept of verifying identity. Authentication allows int
 
 <details>
 <summary>en</summary>
+
 __Authorization__: The affordance of permissions based on role; the process of making one party 
 "trusted" by another.
 </details>
@@ -357,6 +361,7 @@ __Authorization__: The affordance of permissions based on role; the process of m
 
 <details>
 <summary>en</summary>
+
 __Client__: Refers to any entity that might interact through requests. Some examples could be a 
 Learning Record Provider, a Learning Record Consumer, a Learning Record Store (LRS), or a Learning 
 Management System (LMS).
@@ -366,6 +371,7 @@ Management System (LMS).
 
 <details>
 <summary>en</summary>
+
 __Community of Practice (CoP)__: A group of practitioners connected by a common cause, role or purpose, which operates in a common 
 modality. CoPs are focused on implementing xAPI within a specific knowledge domain or use case. CoPs or independent developers, 
 can create domain-specific vocabularies, profiles, and recipes. These practices usually involve work around defining use cases 
@@ -377,6 +383,7 @@ also reuse existing vocabularies, profiles, and recipes already published by oth
 
 <details>
 <summary>en</summary>
+
 __Document Profile Resource__: A construct where information about the learner or activity is kept, typically in name/document pairs 
 that have meaning to an instructional system component. Not to be confused with [Profile](#def-profile).
 </details>
@@ -385,6 +392,7 @@ that have meaning to an instructional system component. Not to be confused with 
 
 <details>
 <summary>en</summary>
+
 __Endpoint__: An entry point in a service-oriented-architecture.  xAPI mirrors this approach with resources 
 by defining the IRI from which communication takes place as an endpoint.
 </details>
@@ -393,6 +401,7 @@ by defining the IRI from which communication takes place as an endpoint.
 
 <details>
 <summary>en</summary>
+
 __Experience API (xAPI)__: The collection of rules articulated in this document which determines how learning 
 experiences are defined, formatted, and exchanged so that independent software programs can exchange and make 
 use of this information.
@@ -402,6 +411,7 @@ use of this information.
 
 <details>
 <summary>en</summary>
+
 __Immutable__:  Adjective used to describe things which cannot be changed. With some exceptions, Statements in the xAPI 
 are immutable. This ensures that when Statements are shared between LRSs, multiple copies of the Statement remain the same.
 </details>
@@ -410,6 +420,7 @@ are immutable. This ensures that when Statements are shared between LRSs, multip
 
 <details>
 <summary>en</summary>
+
 __Internationalized Resource Identifier  (IRI)__: A unique identifier which could be an IRL. Used to identify an object 
 such as a verb, activity or activity type. Unlike URIs, IRIs can contain some characters outside of the ASCII character 
 set in order to support international languages. 
@@ -422,6 +433,7 @@ IRIs always include a scheme. This is not a requirement of this standard, but pa
 
 <details>
 <summary>en</summary>
+
 __Internationalized Resource Locator (IRL)__:  In the context of this document, an IRL is an IRI that when translated 
 into a URI (per the IRI to URI rules), is a URL. 
 </details>
@@ -430,6 +442,7 @@ into a URI (per the IRI to URI rules), is a URL.
 
 <details>
 <summary>en</summary>
+
 __Inverse Functional Identifier__: An identifier which is unique to a particular persona or Group.
 </details>
 
@@ -437,6 +450,7 @@ __Inverse Functional Identifier__: An identifier which is unique to a particular
 
 <details>
 <summary>en</summary>
+
 __Learning Experience__: An event associated with learning.  It is highly diverse as far as what it can be.  
 Examples include reading a book, taking an online course, going on a field trip, engaging in self-directed 
 research, or receiving a certificate for a completed course.
@@ -446,6 +460,7 @@ research, or receiving a certificate for a completed course.
 
 <details>
 <summary>en</summary>
+
 __Learning Management System (LMS)__: "A software package used to administer one or more courses to one or more learners. 
 An LMS is typically a web-based system that allows learners to authenticate themselves, register for courses, complete 
 courses and take assessments" (Learning Systems Architecture Lab definition). An LMS in this document is used as an 
@@ -456,6 +471,7 @@ example of how a user is identified as "trusted" within a system and able to acc
 
 <details>
 <summary>en</summary>
+
 __Learning Record__: An account of a learning experience that is formatted according to the rules of xAPI.  A Learning Record
 takes on many forms, including Statements, documents, and their parts.  This definition is intended to be all-inclusive.
 </details>
@@ -464,6 +480,7 @@ takes on many forms, including Statements, documents, and their parts.  This def
 
 <details>
 <summary>en</summary>
+
 __Learning Record Consumer (LRC)__: An xAPI Client that accesses data from Learning Record Store(s) with the intent of processing 
 the data, including interpretation, analysis, translation, dissemination, and aggregation.
 </details>
@@ -472,6 +489,7 @@ the data, including interpretation, analysis, translation, dissemination, and ag
 
 <details>
 <summary>en</summary>
+
 __Learning Record Provider (LRP)__: An xAPI Client that sends data to Learning Record Store(s).  Often, the Learning Record 
 Provider will create Learning Records while monitoring a learner as a part of a Learning Experience.
 </details>
@@ -480,6 +498,7 @@ Provider will create Learning Records while monitoring a learner as a part of a 
 
 <details>
 <summary>en</summary>
+
 __Learning Record Store (LRS)__: A server (i.e. system capable of receiving and processing web requests) that is responsible 
 for receiving, storing, and providing access to Learning Records.
 </details>
@@ -488,6 +507,7 @@ for receiving, storing, and providing access to Learning Records.
 
 <details>
 <summary>en</summary>
+
 __Metadata Consumer__: A person, organization, software program or other thing that seeks to determine the meaning represented
 by an IRI used within this specification and/or retrieves metadata about an IRI. An LRS might or might not be a metadata consumer. 
 </details>
@@ -496,6 +516,7 @@ by an IRI used within this specification and/or retrieves metadata about an IRI.
 
 <details>
 <summary>en</summary>
+
 __Metadata Provider__: A person, organization, software program or other thing that coins IRIs to be used within 
 this specification and/or hosts metadata about an IRI. 
 </details>
@@ -504,6 +525,7 @@ this specification and/or hosts metadata about an IRI.
 
 <details>
 <summary>en</summary>
+
 __Persona__: A set of one or more representations which defines an Actor uniquely.  Conceptually, this is like 
 having a "home email" and a "work email".  Both are the same person, but have different data, associations, etc.
 </details>
@@ -512,6 +534,7 @@ having a "home email" and a "work email".  Both are the same person, but have di
 
 <details>
 <summary>en</summary>
+
 __Profile__: A specific set of rules and documentation for implementing xAPI in a particular context. Profiles generally provide a 
 particular vocabulary of terms, some created specifically for the profile, and some are referenced from other vocabularies. 
 Sometimes a profile might provide multiple vocabularies for different situations, and sometimes someone might curate a vocabulary 
@@ -522,6 +545,7 @@ from multiple sources without creating a profile.  Not to be confused with [Docu
 
 <details>
 <summary>en</summary>
+
 __Registration__: An instance of an Actor experiencing a particular Activity.
 </details>
 
@@ -529,6 +553,7 @@ __Registration__: An instance of an Actor experiencing a particular Activity.
 
 <details>
 <summary>en</summary>
+
 __Representational State Transfer (REST)__: An architecture for designing networked web services.
 It relies on HTTP methods and uses current web best practices.
 </details>
@@ -537,6 +562,7 @@ It relies on HTTP methods and uses current web best practices.
 
 <details>
 <summary>en</summary>
+
 __Service__: A software component responsible for one or more aspects of the distributed learning process. 
 An LMS typically combines many services to design a complete learning experience.
 </details>
@@ -545,6 +571,7 @@ An LMS typically combines many services to design a complete learning experience
 
 <details>
 <summary>en</summary>
+
 __Statement__: A data sctructure showing evidence for any sort of experience or event which is to be tracked 
 in xAPI as a Learning Record.  A set of several Statements, each representing an event in time, might be used 
 to track complete details about a learning experience.  
@@ -554,6 +581,7 @@ to track complete details about a learning experience.
 
 <details>
 <summary>en</summary>
+
 __Tin Can API (TCAPI)__: The previous name of the API defined in this document, often used in 
 informal references to the Experience API.  
 </details>
@@ -562,6 +590,7 @@ informal references to the Experience API.
 
 <details>
 <summary>en</summary>
+
 __Verb__: Is the action being done by the Actor within the Activity within a Statement. 
 A Verb represents the "did" in "I did this".
 </details>
@@ -570,6 +599,7 @@ A Verb represents the "did" in "I did this".
 
 <details>
 <summary>en</summary>
+
 __Vocabulary__: A list or collection of the terms that are used by a COP for labeling or categorizing information in a 
 particular domain. The use of a vocabulary ensures that everyone is using the same word to mean the same thing. For more 
 information on vocabularies, see the [xAPI Vocabulary Companion Specification](https://github.com/adlnet/companion-specification-for-xapi-vocabularies/blob/master/SUMMARY.md).
@@ -581,6 +611,7 @@ information on vocabularies, see the [xAPI Vocabulary Companion Specification](h
 
 <details>
 <summary>en</summary>
+
 This section explains and shows graphically how different pieces of xAPI can fit together.  
 </details>
 
@@ -591,6 +622,7 @@ This section explains and shows graphically how different pieces of xAPI can fit
 
 <details>
 <summary>en</summary>
+
 Figure 1 shows the tracking of learning experiences. A learner has a learning experience. This experience could take place in an 
 online course, it could be on the job or it could be part of recreation. It really could be anything. This experience is tracked, 
 on the learner’s behalf, by a trusted Learning Record Provider (LRP). The Learning Record Provider can also be responsible for the 
@@ -609,6 +641,7 @@ Learning Records and makes use of them.
 
 <details>
 <summary>en</summary>
+
 Understanding how a single Activity (as uniquely identified by its IRI) is defined and described is a key concept in xAPI. 
 Figure 2 shows this process. An Activity (as a part of a Statement) has metadata properties that may be populated within the 
 Statement itself. This is done in the Statement's Activity Definition. The id of each Activity is an IRI which also could have 
@@ -628,6 +661,7 @@ canonical version.
 
 <details>
 <summary>en</summary>
+
 xAPI grants the framework for allowing selective access to one's personal data. This is done through the management of what are 
 called personas. In xAPI, each persona represents the "I" in "I did this" and is logically the subject of the Statement. Each 
 Agent or Group in xAPI corresponds to a persona. A learner sending Learning Records to an LRS could have multiple personas (Agents) 
@@ -650,6 +684,7 @@ that an LRS can take. It's also possible that some LRSs will have no mechanism f
 
 <details>
 <summary>en</summary>
+
 xAPI can be extended in a few ways. The most notable are Statement extensions, which allow great flexibility within Statements. 
 It is recommended that Communities of Practice agree on how to use extensions for their particular use cases and utilize 
 profiles whenever possible. Implementation details are covered in [4.1 Extensions](./xAPI-Data.md#miscext).
@@ -667,6 +702,7 @@ those listed in this specification can be implemented and co-exist with the reso
 
 <details>
 <summary>en</summary>
+
 xAPI strictly defines the structure of Statements, but is very flexible as to the contents of that structure. For example, the 
 specification requires that all Statements have a "verb" property, but does not restrict the values of that property; any Verb 
 can be used. This flexibility enables xAPI to be used in any context, including future use cases not envisaged by the 
