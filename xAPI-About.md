@@ -284,7 +284,7 @@ JSON allows for objects to have properties that contain empty objects. This is n
 
 <a name="def-activity"></a>
 
-__Activity__: 「I did this」の「this」を構成するオブジェクトのタイプ。アクターが相互作用したもの。動詞と意味のある組み合わせで記録される指示、経験、パフォーマンスの単位となる。アクティビティの解釈は広範で、Activityは、椅子などの有形のオブジェクト (現実または仮想) であることが可能なことを意味します。ステートメント「アンナはケーキのレシピを試しました」であれば、「レシピ」はxAPIステートメントの観点からActivityを構成します。Activityのその他の例として、「本」「e ラーニング コース」「ハイキング」「会議」などがあります。
+__Activity__: 「I did this」の「this」を構成するオブジェクトのタイプの一種。アクターが相互作用した何かしらのもの。動詞と意味のある組み合わせで記録され、指示、経験、パフォーマンスの単位となります。Activityの解釈は広範で、つまり、椅子などの有形のオブジェクト (現実または仮想) であることが可能なことを意味します。「アンナはケーキのレシピを試しました」というステートメントであれば、「レシピ」はxAPIステートメントの観点からActivityだと位置づけられます。Activityのその他の例として、「本」「e ラーニング コース」「ハイキング」「会議」などがあります。
 
 <details>
 <summary>en</summary>
@@ -313,6 +313,8 @@ __Actor__: An individual or group representation tracked using Statements perfor
 </details>
 
 <a name="def-api"></a>
+
+__Application Programming Interface (API)__: ソフトウェアアプリケーションやツールへのアクセスを可能にするため作成された一連のルールと標準。
 
 <details>
 <summary>en</summary>
