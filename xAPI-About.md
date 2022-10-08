@@ -600,8 +600,14 @@ Any metadata located at where the IRI resolves is the authoritative source of me
 
 ##### Agent and Persona Management
 
-###### Figure 3: xAPI Agent and Persona Management
+###### 図 3: xAPI Agent and Persona Management
 ![xAPI Activity Data and Metadata](./xAPIPersonas.jpg)
+
+xAPIは、個人のデータへの選択的なアクセス許可のためのフレームワークを提供します。これは、ペルソナ(personas)と呼ばれるものの管理を通じて行われます。xAPIにおいて、各ペルソナは「I did this」の「I」を表し、論理的にはステートメントの主語となります。xAPIの各エージェントやグループは、ペルソナに対応します。学習レコードをLRSに送信する学習者は、複数のペルソナ (エージェント) をもつことができます。
+
+図3で、学習者は複数のサービスにアクセスしています。これらのサービスには、職場で使用されるものもあれば、自宅で使用されるものもあります。社会的な目的で使用されるものもあれば、教育や専門的な目的で使用されるものもあるでしょう。このように、複数のサービスの上で複数のペルソナが集合的に機能しているのです。これら各サービスは、データをLRSに送信します。結果として、同じ学習者による3つの異なるペルソナからのステートメントが存在することになります。
+
+LRSは、各ペルソナによる全情報を1つの「Person」オブジェクトに集約できます。Personオブジェクトは、[エージェントリソース](./xAPI-Communication.md#agentsres) を介してLRSから取得できます。これら複数のペルソナが1人の人物に属していることをLRSがどのように認識するかは、仕様の範囲外ですが、LRSが取れるアプローチはいくつかあります。一部のLRSは、ペルソナを関連付けるしくみをもっていない可能性もあります。
 
 <details>
 <summary>en</summary>
