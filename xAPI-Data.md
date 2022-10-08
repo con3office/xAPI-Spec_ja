@@ -463,7 +463,13 @@ The Actor defines who performed the action. The Actor of a Statement can be an A
 ##### <a name="2.4.2.1">2.4.2.1</a> When the Actor objectType is Agent
 
 ###### <a name="2.4.2.1.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 An Agent (an individual) is a persona or system.
+</details>
 
 ###### <a name="2.4.2.1.s2"></a>Details
 
@@ -629,7 +635,12 @@ The table below lists all possible Inverse Functional Identifier properties.
 
 ###### <a name="2.4.2.4.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 A user account on an existing system, such as a private system (LMS or intranet) or a public system (social networking site).
+</details>
 
 ###### <a name="2.4.2.4.s2"></a>Details
 
@@ -677,7 +688,12 @@ This example shows an Agent identified by an opaque account:
 
 ###### <a name="2.4.3.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 The Verb defines the action between an Actor and an Activity. 
+</details>
 
 ###### <a name="2.4.3.s2"></a>Rationale
 
@@ -1321,7 +1337,13 @@ There are two possibilities for using a Statement as an Object. First, an Object
 ##### <a name="2.4.4.3.s2"></a>Statement References
 
 ###### <a name="2.4.4.3.s3"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 A Statement Reference is a pointer to another pre-existing Statement.
+</details>
 
 ###### <a name="2.4.4.3.s4"></a>Requirements
 
@@ -1454,7 +1476,12 @@ One interesting use of SubStatements is in creating Statements of intention. For
 
 ###### <a name="2.4.5.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 An optional property that represents a measured outcome related to the Statement in which it is included.
+</details>
 
 ###### <a name="2.4.5.s2"></a>Details
 
@@ -1513,7 +1540,13 @@ The following table contains the properties of the Result Object.
 ##### <a name="2.4.5.1">2.4.5.1</a> Score
 
 ###### <a name="2.4.5.1.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 An optional property that represents the outcome of a graded Activity achieved by an Agent.
+</details>
 
 ###### <a name="2.4.5.1.s2"></a>Details
 
@@ -1572,7 +1605,13 @@ The properties of the Score Object are based on the corresponding properties of 
 #### <a name="2.4.6">2.4.6</a> Context
 
 ###### <a name="2.4.6.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 An optional property that provides a place to add contextual information to a Statement. All "context" properties are optional.
+</details>
 
 ###### <a name="2.4.6.s2"></a>Rationale
 
@@ -1695,7 +1734,12 @@ The Registration is also used when storing documents within the State Resource, 
 
 ###### <a name="2.4.6.2.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 A map of the types of learning activity context that this Statement is related to.
+</details>
 
 ###### <a name="2.4.6.2.s2"></a>Rationale
 
@@ -1947,7 +1991,12 @@ Version information in Statements helps Learning Record Consumers get their bear
 
 ###### <a name="2.4.10.s2"></a>Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.10.s2.b1"></a>Version MUST be formatted as laid out for the API version header in [Versioning](./xAPI-Communication.md#versioning)
+</details>
 
 ###### <a name="2.4.10.s3"></a>LRS Requirements
 
@@ -2181,7 +2230,12 @@ __Note:__ The step of validating against the included X.509 certificate is inten
 
 ##### <a name="2.6.s7"></a>Example
 
+
+<details>
+<summary>en</summary>
+
 See [Appendix D: Example Signed Statement](#Appendix2D) for an example.
+</details>
 
 <a name="metadata"></a>
 
@@ -2323,7 +2377,12 @@ Hosted metadata consists of a document containing a JSON object as described abo
 <a name="special-data"></a>
 ## <a name="4.0">4.0</a> Special Data Types and Rules
 
+
+<details>
+<summary>en</summary>
+
 The following are data types requiring additional rules that are found commonly in this specification.
+</details>
 
 <a name="miscext"></a> 
 
@@ -2435,7 +2494,12 @@ Timestamps are a format type which represent a specific time. They are formatted
 <a name="durations"></a>
 ### <a name="4.6">4.6</a> ISO 8601 Durations
 
+
+<details>
+<summary>en</summary>
+
 Durations are strings representing the amount of time something took.
+</details>
 
 ###### <a name="4.6.s1"></a>Requirements
 
