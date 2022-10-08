@@ -569,6 +569,10 @@ This section explains and shows graphically how different pieces of xAPI can fit
 ###### Figure 1: Data Flow in xAPI
 ![Data Flow in xAPI](./xAPIDataFlow.jpg)
 
+図1は、学習経験のトラッキングを示したものです。 学習者は学習経験をもちます。 この経験は、オンラインコースで行うことも、職場で行うことも、レクリエーションの一部で行なわれるかも知れません。本当に何でもありえます。経験は、信頼できる学習レコードプロバイダー(Learning Record Provider: LRP) によって学習者の代わりにトラッキングされます。学習レコードプロバイダーは、経験と学習者の間の信頼関係にも責任を負います。これには、学習者向けコンテンツの立ち上げや、コンテンツに関連するデジタル著作権の管理が含まれるかも知れません。
+
+学習レコードプロバイダーは、学習レコードを作成し、それらを 1 つ以上の学習レコードストア(Learning Record Store: LRS) に送信します。 LRS は学習レコードを保存し、許可されたクライアントが利用できるようにします。 学習レコードコンシューマ(Learning Record Consumer: LRC) は、学習レコードにアクセスして利用するクライアントの一種です。
+
 <details>
 <summary>en</summary>
 
