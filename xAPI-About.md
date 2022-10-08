@@ -583,8 +583,12 @@ The Learning Record Provider creates Learning Records and sends them to one or m
 
 ##### Activity Data and Metadata
 
-###### Figure 2: xAPI Activity Data and Metadata
+###### 図 2: xAPI Activity Data and Metadata
 ![xAPI Activity Data and Metadata](./xAPIMetadata.jpg)
+
+(IRIによって一意に識別される) 単一のActivityがどのように定義および記述されるかの理解こそ、xAPIの重要概念です。 図2は、そのプロセスを示したものです。(ステートメントの一部として)Activityには、ステートメント自体に組み込めるメタデータ(Metadata)プロパティがあります。これは、ステートメントのActivity定義(Activity Definition)で行われます。 各ActivityのIDはIRIであり、IRIの解決場所にメタデータを配置することもできます。 IRIが解決するメタデータは、すべてメタデータプロバイダー(Metadata Provider)の管理下にあります。メタデータプロバイダーは、IRIが永続的であり、正しく解決されることを保証する役割も担います。
+
+IRIが解決する場所にあるメタデータは、メタデータとして信頼できるソースであることから、LRSの正規バージョンであるActivityのメタデータ(LRSのActivity定義)に付加するため、ステートメントから受け取るものより優先して使用されます。メタデータコンシューマ(Metadata Consumer)は、信頼できるバージョンのIRIを介してメタデータにアクセスしたり、正規バージョンのActivityリソース(Activities Resource)を問い合わせができます。
 
 <details>
 <summary>en</summary>
