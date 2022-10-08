@@ -137,22 +137,11 @@ xAPIの目標は次のとおりです。
 <details>
 <summary>en</summary>
 
-The Experience API (xAPI) is a technical specification that aims to facilitate the documentation and communication of 
-learning experiences. It specifies a structure to describe learning experiences and defines how these descriptions can 
-be exchanged electronically.
+The Experience API (xAPI) is a technical specification that aims to facilitate the documentation and communication of learning experiences. It specifies a structure to describe learning experiences and defines how these descriptions can be exchanged electronically.
   
-The xAPI is an effort of the Advanced Distributed Learning (ADL) Initiative.  ADL was established in 1997 to 
-standardize and modernize training and education management and delivery in the US. Since that time, there has been a 
-growing realization of the need to track learning experiences of individuals beyond formal, structured computer-based training. 
-In assessing candidates' suitability for positions or their capability for performing various tasks, there is a need 
-to consider a wide range of formal and informal learning experiences, both on and offline.  That information, 
-more often than not is scattered across a wide variety of sources.
+The xAPI is an effort of the Advanced Distributed Learning (ADL) Initiative.  ADL was established in 1997 to standardize and modernize training and education management and delivery in the US. Since that time, there has been a growing realization of the need to track learning experiences of individuals beyond formal, structured computer-based training. In assessing candidates' suitability for positions or their capability for performing various tasks, there is a need to consider a wide range of formal and informal learning experiences, both on and offline.  That information, more often than not is scattered across a wide variety of sources.
 
-Out of this perceived need, the xAPI community and specification were born. xAPI assumes that:
-  * There is a need to be able to analyze information about learning experiences and their outcomes distributed across 
-  a wide variety of sources, platforms and technologies.
-  * Developing a commonly-accepted framework for gathering, storing and exchanging this information represents the 
-  best way of achieving this.
+Out of this perceived need, the xAPI community and specification were born. xAPI assumes that:* There is a need to be able to analyze information about learning experiences and their outcomes distributed across a wide variety of sources, platforms and technologies.* Developing a commonly-accepted framework for gathering, storing and exchanging this information represents the best way of achieving this.
 
 The goals of the xAPI are:
 
@@ -237,28 +226,24 @@ Where the specification does not include requirements relating to a particular f
 <a name="json"></a>
 ## 3.0 Serialization and JavaScript Object Notation (JSON)
 
+シリアライゼーションとは、データ オブジェクトと構造を保存または転送用の形式に変換するプロセスであり、結果のシリアライゼーションから元のデータ オブジェクトを再作成できるようになります。場合によっては、データの一部を複数の方法でシリアル化できる場合があります。たとえば、true に対応する値を持つブール値のプロパティは、使用されるシリアル化に応じて「true」または「1」として表される場合があります。
+
+xAPI はシリアル化のために JSON の規則に従います (したがって、ブール値は「true」または「false」として表されます)。 XML などの他のシリアル化を使用して、この仕様で定義されているオブジェクトを表すことも可能です。これはこの仕様の範囲外であり、この仕様で定義されているオブジェクトを表すために JSON 以外を使用することは準拠していません。
+
+JSON のルール内でも、特に時間に関するデータに関連して、データをシリアル化する方法のバリエーションが考えられます。 xAPI の多くの機能は、2 つのステートメントが等しいかどうかを判断できるシステムに依存しているため、これは重要です。これによって影響を受けるステートメントのプロパティの詳細については、[不変性と例外](./xAPI-Data.md#statement-immutability-and-exceptions) を参照してください。
+
+JSON では、オブジェクトが空のオブジェクトを含むプロパティを持つことができます。これは xAPI 内では推奨されません。ステートメントがプロパティに関するデータを含むことを意図していない場合、そのプロパティはまったく使用されないことが予想されます。すべての必須プロパティに値を含める必要があります。
 
 <details>
 <summary>en</summary>
 
-Serialization is the process of translating data objects and structures into a format for storage or transmission, such that the 
-original data object can be recreated from the resulting serialization. In some cases it might be possible to serialize a piece 
-of data in more than one way. For example, a boolean property with a value corresponding to true might be represented 
-as `true` or `1` depending on the serialization used. 
+Serialization is the process of translating data objects and structures into a format for storage or transmission, such that the original data object can be recreated from the resulting serialization. In some cases it might be possible to serialize a piece of data in more than one way. For example, a boolean property with a value corresponding to true might be represented as `true` or `1` depending on the serialization used. 
 
-xAPI follows the rules of JSON for serializations (so boolean values are represented as `true` or `false`). It might 
-also be possible to represent the objects defined in this specification using other serializations, such as XML. This is out 
-of scope of this specification and use of anything other than JSON to represent the objects defined in this specification 
-is not conformant. 
+xAPI follows the rules of JSON for serializations (so boolean values are represented as `true` or `false`). It might also be possible to represent the objects defined in this specification using other serializations, such as XML. This is out of scope of this specification and use of anything other than JSON to represent the objects defined in this specification is not conformant. 
 
-Even within the rules of JSON there are possible variations of how data can be serialized, especially in relation to data 
-about time. This is significant as a number of features of xAPI rely on systems being able to determine whether two 
-Statements are equivalent. See [Immutability and exceptions](./xAPI-Data.md#statement-immutability-and-exceptions) 
-for more details about the properties of the Statement affected by this. 
+Even within the rules of JSON there are possible variations of how data can be serialized, especially in relation to data about time. This is significant as a number of features of xAPI rely on systems being able to determine whether two Statements are equivalent. See [Immutability and exceptions](./xAPI-Data.md#statement-immutability-and-exceptions) for more details about the properties of the Statement affected by this. 
 
-JSON allows for objects to have properties that contain empty objects. This is not recommended within xAPI; if the Statement 
-is not intended to contain data about a property then it is expected that the property will not be used at all. 
-All required properties are required to contain values. 
+JSON allows for objects to have properties that contain empty objects. This is not recommended within xAPI; if the Statement is not intended to contain data about a property then it is expected that the property will not be used at all. All required properties are required to contain values. 
 </details>
 
 
@@ -299,16 +284,12 @@ All required properties are required to contain values.
 
 <a name="def-activity"></a>
 
+__Activity__: 「I did this」の「this」を構成するオブジェクトのタイプ。アクターが相互作用したもの。動詞と意味のある組み合わせで追跡される指示、経験、パフォーマンスの単位となる。アクティビティの解釈は広範で、アクティビティは、椅子などの有形のオブジェクト (現実または仮想) であることが可能なことを意味します。ステートメント「アンナはケーキのレシピを試しました」であれば、レシピはxAPIステートメントの観点からアクティビティを構成します。アクティビティのその他の例として、本、e ラーニング コース、ハイキング、会議などがあります。
 
 <details>
 <summary>en</summary>
 
-__Activity__: A type of Object making up the "this" in "I did this"; it is something 
-with which an Actor interacted. It can be a unit of instruction, experience, or performance that is 
-to be tracked in meaningful combination with a Verb. Interpretation of Activity is broad, meaning that 
-Activities can even be tangible objects such as a chair (real or virtual). In the Statement "Anna 
-tried a cake recipe", the recipe constitutes the Activity in terms of the xAPI Statement. Other 
-examples of Activities include a book, an e-learning course, a hike, or a meeting.
+__Activity__: A type of Object making up the "this" in "I did this"; it is something with which an Actor interacted. It can be a unit of instruction, experience, or performance that is to be tracked in meaningful combination with a Verb. Interpretation of Activity is broad, meaning that Activities can even be tangible objects such as a chair (real or virtual). In the Statement "Anna tried a cake recipe", the recipe constitutes the Activity in terms of the xAPI Statement. Other examples of Activities include a book, an e-learning course, a hike, or a meeting.
 </details>
 
 <a name="def-activity-provider"></a>
@@ -362,9 +343,7 @@ __Authorization__: The affordance of permissions based on role; the process of m
 <details>
 <summary>en</summary>
 
-__Client__: Refers to any entity that might interact through requests. Some examples could be a 
-Learning Record Provider, a Learning Record Consumer, a Learning Record Store (LRS), or a Learning 
-Management System (LMS).
+__Client__: Refers to any entity that might interact through requests. Some examples could be a Learning Record Provider, a Learning Record Consumer, a Learning Record Store (LRS), or a Learning Management System (LMS).
 </details>
 
 <a name="def-community-of-practice"></a>
@@ -372,11 +351,7 @@ Management System (LMS).
 <details>
 <summary>en</summary>
 
-__Community of Practice (CoP)__: A group of practitioners connected by a common cause, role or purpose, which operates in a common 
-modality. CoPs are focused on implementing xAPI within a specific knowledge domain or use case. CoPs or independent developers, 
-can create domain-specific vocabularies, profiles, and recipes. These practices usually involve work around defining use cases 
-and curating the various vocabulary terms, synonyms, and other related metadata that might be preferred within a CoP. They can 
-also reuse existing vocabularies, profiles, and recipes already published by other CoPs or participants of the xAPI community.
+__Community of Practice (CoP)__: A group of practitioners connected by a common cause, role or purpose, which operates in a common modality. CoPs are focused on implementing xAPI within a specific knowledge domain or use case. CoPs or independent developers, can create domain-specific vocabularies, profiles, and recipes. These practices usually involve work around defining use cases and curating the various vocabulary terms, synonyms, and other related metadata that might be preferred within a CoP. They can also reuse existing vocabularies, profiles, and recipes already published by other CoPs or participants of the xAPI community.
 </details>
 
 <a name="def-document-profile"></a>
@@ -384,8 +359,7 @@ also reuse existing vocabularies, profiles, and recipes already published by oth
 <details>
 <summary>en</summary>
 
-__Document Profile Resource__: A construct where information about the learner or activity is kept, typically in name/document pairs 
-that have meaning to an instructional system component. Not to be confused with [Profile](#def-profile).
+__Document Profile Resource__: A construct where information about the learner or activity is kept, typically in name/document pairs that have meaning to an instructional system component. Not to be confused with [Profile](#def-profile).
 </details>
 
 <a name="def-endpoint"></a>
@@ -393,8 +367,7 @@ that have meaning to an instructional system component. Not to be confused with 
 <details>
 <summary>en</summary>
 
-__Endpoint__: An entry point in a service-oriented-architecture.  xAPI mirrors this approach with resources 
-by defining the IRI from which communication takes place as an endpoint.
+__Endpoint__: An entry point in a service-oriented-architecture.  xAPI mirrors this approach with resources by defining the IRI from which communication takes place as an endpoint.
 </details>
 
 <a name="def-experience-api"></a>
@@ -402,9 +375,7 @@ by defining the IRI from which communication takes place as an endpoint.
 <details>
 <summary>en</summary>
 
-__Experience API (xAPI)__: The collection of rules articulated in this document which determines how learning 
-experiences are defined, formatted, and exchanged so that independent software programs can exchange and make 
-use of this information.
+__Experience API (xAPI)__: The collection of rules articulated in this document which determines how learning experiences are defined, formatted, and exchanged so that independent software programs can exchange and make use of this information.
 </details>
 
 <a name ="def-immutable"></a>
@@ -412,8 +383,7 @@ use of this information.
 <details>
 <summary>en</summary>
 
-__Immutable__:  Adjective used to describe things which cannot be changed. With some exceptions, Statements in the xAPI 
-are immutable. This ensures that when Statements are shared between LRSs, multiple copies of the Statement remain the same.
+__Immutable__:  Adjective used to describe things which cannot be changed. With some exceptions, Statements in the xAPI are immutable. This ensures that when Statements are shared between LRSs, multiple copies of the Statement remain the same.
 </details>
 
 <a name="def-iri"></a>
@@ -421,12 +391,9 @@ are immutable. This ensures that when Statements are shared between LRSs, multip
 <details>
 <summary>en</summary>
 
-__Internationalized Resource Identifier  (IRI)__: A unique identifier which could be an IRL. Used to identify an object 
-such as a verb, activity or activity type. Unlike URIs, IRIs can contain some characters outside of the ASCII character 
-set in order to support international languages. 
+__Internationalized Resource Identifier  (IRI)__: A unique identifier which could be an IRL. Used to identify an object such as a verb, activity or activity type. Unlike URIs, IRIs can contain some characters outside of the ASCII character set in order to support international languages. 
 
-IRIs always include a scheme. This is not a requirement of this standard, but part of the definition of IRIs, per 
-[RFC 3987](http://www.ietf.org/rfc/rfc3987.txt). What are sometimes called "relative IRIs" are not IRIs.
+IRIs always include a scheme. This is not a requirement of this standard, but part of the definition of IRIs, per [RFC 3987](http://www.ietf.org/rfc/rfc3987.txt). What are sometimes called "relative IRIs" are not IRIs.
 </details>
 
 <a name="def-irl"></a>
@@ -434,8 +401,7 @@ IRIs always include a scheme. This is not a requirement of this standard, but pa
 <details>
 <summary>en</summary>
 
-__Internationalized Resource Locator (IRL)__:  In the context of this document, an IRL is an IRI that when translated 
-into a URI (per the IRI to URI rules), is a URL. 
+__Internationalized Resource Locator (IRL)__:  In the context of this document, an IRL is an IRI that when translated into a URI (per the IRI to URI rules), is a URL. 
 </details>
 
 <a name="def-inverse-functional-identifier"></a>
@@ -451,9 +417,7 @@ __Inverse Functional Identifier__: An identifier which is unique to a particular
 <details>
 <summary>en</summary>
 
-__Learning Experience__: An event associated with learning.  It is highly diverse as far as what it can be.  
-Examples include reading a book, taking an online course, going on a field trip, engaging in self-directed 
-research, or receiving a certificate for a completed course.
+__Learning Experience__: An event associated with learning.  It is highly diverse as far as what it can be.  Examples include reading a book, taking an online course, going on a field trip, engaging in self-directed research, or receiving a certificate for a completed course.
 </details>
 
 <a name="def-learning-management-system"></a>
@@ -461,10 +425,7 @@ research, or receiving a certificate for a completed course.
 <details>
 <summary>en</summary>
 
-__Learning Management System (LMS)__: "A software package used to administer one or more courses to one or more learners. 
-An LMS is typically a web-based system that allows learners to authenticate themselves, register for courses, complete 
-courses and take assessments" (Learning Systems Architecture Lab definition). An LMS in this document is used as an 
-example of how a user is identified as "trusted" within a system and able to access its Learning Experiences.
+__Learning Management System (LMS)__: "A software package used to administer one or more courses to one or more learners. An LMS is typically a web-based system that allows learners to authenticate themselves, register for courses, complete courses and take assessments" (Learning Systems Architecture Lab definition). An LMS in this document is used as an example of how a user is identified as "trusted" within a system and able to access its Learning Experiences.
 </details>
 
 <a name="def-learning-record"></a>
@@ -472,8 +433,7 @@ example of how a user is identified as "trusted" within a system and able to acc
 <details>
 <summary>en</summary>
 
-__Learning Record__: An account of a learning experience that is formatted according to the rules of xAPI.  A Learning Record
-takes on many forms, including Statements, documents, and their parts.  This definition is intended to be all-inclusive.
+__Learning Record__: An account of a learning experience that is formatted according to the rules of xAPI.  A Learning Record takes on many forms, including Statements, documents, and their parts.  This definition is intended to be all-inclusive.
 </details>
 
 <a name="def-learning-record-consumer"></a>
@@ -481,8 +441,7 @@ takes on many forms, including Statements, documents, and their parts.  This def
 <details>
 <summary>en</summary>
 
-__Learning Record Consumer (LRC)__: An xAPI Client that accesses data from Learning Record Store(s) with the intent of processing 
-the data, including interpretation, analysis, translation, dissemination, and aggregation.
+__Learning Record Consumer (LRC)__: An xAPI Client that accesses data from Learning Record Store(s) with the intent of processing the data, including interpretation, analysis, translation, dissemination, and aggregation.
 </details>
 
 <a name="def-learning-record-provider"></a>
@@ -490,8 +449,7 @@ the data, including interpretation, analysis, translation, dissemination, and ag
 <details>
 <summary>en</summary>
 
-__Learning Record Provider (LRP)__: An xAPI Client that sends data to Learning Record Store(s).  Often, the Learning Record 
-Provider will create Learning Records while monitoring a learner as a part of a Learning Experience.
+__Learning Record Provider (LRP)__: An xAPI Client that sends data to Learning Record Store(s).  Often, the Learning Record Provider will create Learning Records while monitoring a learner as a part of a Learning Experience.
 </details>
 
 <a name="def-learning-record-store"></a>
@@ -499,8 +457,7 @@ Provider will create Learning Records while monitoring a learner as a part of a 
 <details>
 <summary>en</summary>
 
-__Learning Record Store (LRS)__: A server (i.e. system capable of receiving and processing web requests) that is responsible 
-for receiving, storing, and providing access to Learning Records.
+__Learning Record Store (LRS)__: A server (i.e. system capable of receiving and processing web requests) that is responsible for receiving, storing, and providing access to Learning Records.
 </details>
 
 <a name="def-metadata-consumer"></a>
@@ -508,8 +465,7 @@ for receiving, storing, and providing access to Learning Records.
 <details>
 <summary>en</summary>
 
-__Metadata Consumer__: A person, organization, software program or other thing that seeks to determine the meaning represented
-by an IRI used within this specification and/or retrieves metadata about an IRI. An LRS might or might not be a metadata consumer. 
+__Metadata Consumer__: A person, organization, software program or other thing that seeks to determine the meaning represented by an IRI used within this specification and/or retrieves metadata about an IRI. An LRS might or might not be a metadata consumer. 
 </details>
 
 <a name="def-metadata-provider"></a>
@@ -517,8 +473,7 @@ by an IRI used within this specification and/or retrieves metadata about an IRI.
 <details>
 <summary>en</summary>
 
-__Metadata Provider__: A person, organization, software program or other thing that coins IRIs to be used within 
-this specification and/or hosts metadata about an IRI. 
+__Metadata Provider__: A person, organization, software program or other thing that coins IRIs to be used within this specification and/or hosts metadata about an IRI. 
 </details>
 
 <a name="def-persona"></a>
@@ -526,8 +481,7 @@ this specification and/or hosts metadata about an IRI.
 <details>
 <summary>en</summary>
 
-__Persona__: A set of one or more representations which defines an Actor uniquely.  Conceptually, this is like 
-having a "home email" and a "work email".  Both are the same person, but have different data, associations, etc.
+__Persona__: A set of one or more representations which defines an Actor uniquely.  Conceptually, this is like having a "home email" and a "work email".  Both are the same person, but have different data, associations, etc.
 </details>
 
 <a name="def-profile"></a>
@@ -535,10 +489,7 @@ having a "home email" and a "work email".  Both are the same person, but have di
 <details>
 <summary>en</summary>
 
-__Profile__: A specific set of rules and documentation for implementing xAPI in a particular context. Profiles generally provide a 
-particular vocabulary of terms, some created specifically for the profile, and some are referenced from other vocabularies. 
-Sometimes a profile might provide multiple vocabularies for different situations, and sometimes someone might curate a vocabulary 
-from multiple sources without creating a profile.  Not to be confused with [Document Profile Resource](#def-document-profile).
+__Profile__: A specific set of rules and documentation for implementing xAPI in a particular context. Profiles generally provide a particular vocabulary of terms, some created specifically for the profile, and some are referenced from other vocabularies. Sometimes a profile might provide multiple vocabularies for different situations, and sometimes someone might curate a vocabulary from multiple sources without creating a profile.  Not to be confused with [Document Profile Resource](#def-document-profile).
 </details>
 
 <a name="def-registration"></a>
@@ -554,8 +505,7 @@ __Registration__: An instance of an Actor experiencing a particular Activity.
 <details>
 <summary>en</summary>
 
-__Representational State Transfer (REST)__: An architecture for designing networked web services.
-It relies on HTTP methods and uses current web best practices.
+__Representational State Transfer (REST)__: An architecture for designing networked web services. It relies on HTTP methods and uses current web best practices.
 </details>
 
 <a name="def-service"></a>
@@ -563,8 +513,7 @@ It relies on HTTP methods and uses current web best practices.
 <details>
 <summary>en</summary>
 
-__Service__: A software component responsible for one or more aspects of the distributed learning process. 
-An LMS typically combines many services to design a complete learning experience.
+__Service__: A software component responsible for one or more aspects of the distributed learning process. An LMS typically combines many services to design a complete learning experience.
 </details>
 
 <a name="def-statement"></a>
@@ -572,9 +521,7 @@ An LMS typically combines many services to design a complete learning experience
 <details>
 <summary>en</summary>
 
-__Statement__: A data sctructure showing evidence for any sort of experience or event which is to be tracked 
-in xAPI as a Learning Record.  A set of several Statements, each representing an event in time, might be used 
-to track complete details about a learning experience.  
+__Statement__: A data sctructure showing evidence for any sort of experience or event which is to be tracked in xAPI as a Learning Record.  A set of several Statements, each representing an event in time, might be used to track complete details about a learning experience.  
 </details>
 
 <a name="def-tcapi"></a>
@@ -582,8 +529,7 @@ to track complete details about a learning experience.
 <details>
 <summary>en</summary>
 
-__Tin Can API (TCAPI)__: The previous name of the API defined in this document, often used in 
-informal references to the Experience API.  
+__Tin Can API (TCAPI)__: The previous name of the API defined in this document, often used in informal references to the Experience API.  
 </details>
 
 <a name="def-verb"></a>
@@ -591,8 +537,7 @@ informal references to the Experience API.
 <details>
 <summary>en</summary>
 
-__Verb__: Is the action being done by the Actor within the Activity within a Statement. 
-A Verb represents the "did" in "I did this".
+__Verb__: Is the action being done by the Actor within the Activity within a Statement. A Verb represents the "did" in "I did this".
 </details>
 
 <a name="def-vocabulary"></a>
@@ -600,9 +545,7 @@ A Verb represents the "did" in "I did this".
 <details>
 <summary>en</summary>
 
-__Vocabulary__: A list or collection of the terms that are used by a COP for labeling or categorizing information in a 
-particular domain. The use of a vocabulary ensures that everyone is using the same word to mean the same thing. For more 
-information on vocabularies, see the [xAPI Vocabulary Companion Specification](https://github.com/adlnet/companion-specification-for-xapi-vocabularies/blob/master/SUMMARY.md).
+__Vocabulary__: A list or collection of the terms that are used by a COP for labeling or categorizing information in a particular domain. The use of a vocabulary ensures that everyone is using the same word to mean the same thing. For more information on vocabularies, see the [xAPI Vocabulary Companion Specification](https://github.com/adlnet/companion-specification-for-xapi-vocabularies/blob/master/SUMMARY.md).
 </details>
 
 <a name="xapi-components"></a>
@@ -623,15 +566,9 @@ This section explains and shows graphically how different pieces of xAPI can fit
 <details>
 <summary>en</summary>
 
-Figure 1 shows the tracking of learning experiences. A learner has a learning experience. This experience could take place in an 
-online course, it could be on the job or it could be part of recreation. It really could be anything. This experience is tracked, 
-on the learner’s behalf, by a trusted Learning Record Provider (LRP). The Learning Record Provider can also be responsible for the 
-trusted relationship between the experience and the learner. This might even include launching content for the learner and 
-managing digital rights associated with the content.  
+Figure 1 shows the tracking of learning experiences. A learner has a learning experience. This experience could take place in an online course, it could be on the job or it could be part of recreation. It really could be anything. This experience is tracked, on the learner’s behalf, by a trusted Learning Record Provider (LRP). The Learning Record Provider can also be responsible for the trusted relationship between the experience and the learner. This might even include launching content for the learner and managing digital rights associated with the content.  
 
-The Learning Record Provider creates Learning Records and sends them to one or more Learning Record Stores (LRSs). The LRS stores
-the Learning Records and makes them available to any authorized Client. A Learning Record Consumer (LRC) is a type of Client that accesses 
-Learning Records and makes use of them.
+The Learning Record Provider creates Learning Records and sends them to one or more Learning Record Stores (LRSs). The LRS stores the Learning Records and makes them available to any authorized Client. A Learning Record Consumer (LRC) is a type of Client that accesses Learning Records and makes use of them.
 </details>
 
 ##### Activity Data and Metadata
@@ -642,16 +579,9 @@ Learning Records and makes use of them.
 <details>
 <summary>en</summary>
 
-Understanding how a single Activity (as uniquely identified by its IRI) is defined and described is a key concept in xAPI. 
-Figure 2 shows this process. An Activity (as a part of a Statement) has metadata properties that may be populated within the 
-Statement itself. This is done in the Statement's Activity Definition. The id of each Activity is an IRI which also could have 
-metadata located at the resolution location of the IRI. Any metadata where the IRI resolves is under the control of the Metadata 
-Provider. The Metadata Provider is also responsible for making sure the IRI is permanent and resolves correctly.
+Understanding how a single Activity (as uniquely identified by its IRI) is defined and described is a key concept in xAPI. Figure 2 shows this process. An Activity (as a part of a Statement) has metadata properties that may be populated within the Statement itself. This is done in the Statement's Activity Definition. The id of each Activity is an IRI which also could have metadata located at the resolution location of the IRI. Any metadata where the IRI resolves is under the control of the Metadata Provider. The Metadata Provider is also responsible for making sure the IRI is permanent and resolves correctly.
 
-Any metadata located at where the IRI resolves is the authoritative source of metadata, and could be used to populate the LRS's 
-canonical version of the Activity's metadata (LRS's Activity Definition) as a preference to what it receives from Statements. 
-A Metadata Consumer can access metadata via the IRI for the authoritative version or can query the Activities Resource for the 
-canonical version.
+Any metadata located at where the IRI resolves is the authoritative source of metadata, and could be used to populate the LRS's canonical version of the Activity's metadata (LRS's Activity Definition) as a preference to what it receives from Statements. A Metadata Consumer can access metadata via the IRI for the authoritative version or can query the Activities Resource for the canonical version.
 </details>
 
 ##### Agent and Persona Management
@@ -662,20 +592,11 @@ canonical version.
 <details>
 <summary>en</summary>
 
-xAPI grants the framework for allowing selective access to one's personal data. This is done through the management of what are 
-called personas. In xAPI, each persona represents the "I" in "I did this" and is logically the subject of the Statement. Each 
-Agent or Group in xAPI corresponds to a persona. A learner sending Learning Records to an LRS could have multiple personas (Agents) 
-associated with him or her. 
+xAPI grants the framework for allowing selective access to one's personal data. This is done through the management of what are called personas. In xAPI, each persona represents the "I" in "I did this" and is logically the subject of the Statement. Each Agent or Group in xAPI corresponds to a persona. A learner sending Learning Records to an LRS could have multiple personas (Agents) associated with him or her. 
 
-In Figure 3, a learner accesses multiple services. Some of these services are used at work, others at home.  Some are used for 
-social purposes and others are used for educational or professional puproses.  Thus, there are multiple personas functioning 
-collectively within these services.  Each of these services send data to the LRS. Afterwards, there are Statements from three 
-different personas of the same learner. 
+In Figure 3, a learner accesses multiple services. Some of these services are used at work, others at home.  Some are used for social purposes and others are used for educational or professional puproses.  Thus, there are multiple personas functioning collectively within these services.  Each of these services send data to the LRS. Afterwards, there are Statements from three different personas of the same learner. 
 
-The LRS can aggregate all of the information of each of the personas into one "Person" Object. This object can be retrieved from 
-The LRS via the [Agents Resource](./xAPI-Communication.md#agentsres). How the LRS knows that these 
-multiple personas belong to a single person is out of scope of this specification and there are several different approaches
-that an LRS can take. It's also possible that some LRSs will have no mechanism for associating personas. 
+The LRS can aggregate all of the information of each of the personas into one "Person" Object. This object can be retrieved from The LRS via the [Agents Resource](./xAPI-Communication.md#agentsres). How the LRS knows that these multiple personas belong to a single person is out of scope of this specification and there are several different approaches that an LRS can take. It's also possible that some LRSs will have no mechanism for associating personas. 
 </details>
 
 <a name="extending-xapi"></a>
@@ -685,15 +606,11 @@ that an LRS can take. It's also possible that some LRSs will have no mechanism f
 <details>
 <summary>en</summary>
 
-xAPI can be extended in a few ways. The most notable are Statement extensions, which allow great flexibility within Statements. 
-It is recommended that Communities of Practice agree on how to use extensions for their particular use cases and utilize 
-profiles whenever possible. Implementation details are covered in [4.1 Extensions](./xAPI-Data.md#miscext).
+xAPI can be extended in a few ways. The most notable are Statement extensions, which allow great flexibility within Statements. It is recommended that Communities of Practice agree on how to use extensions for their particular use cases and utilize profiles whenever possible. Implementation details are covered in [4.1 Extensions](./xAPI-Data.md#miscext).
 
-The About Resource is another instance where xAPI supports extensions.  The LRS may find it useful to communicate features or 
-behaviors beyond this specification. The LRS can use extensions to the About Resource to facilitate this communication.
+The About Resource is another instance where xAPI supports extensions.  The LRS may find it useful to communicate features or behaviors beyond this specification. The LRS can use extensions to the About Resource to facilitate this communication.
 
-Finally, the set of resources implemented is not expected to be constrained by this document. Resources beyond 
-those listed in this specification can be implemented and co-exist with the resources defined in this specification.
+Finally, the set of resources implemented is not expected to be constrained by this document. Resources beyond those listed in this specification can be implemented and co-exist with the resources defined in this specification.
 </details>
 
 <a name="COPs"></a>
@@ -703,26 +620,13 @@ those listed in this specification can be implemented and co-exist with the reso
 <details>
 <summary>en</summary>
 
-xAPI strictly defines the structure of Statements, but is very flexible as to the contents of that structure. For example, the 
-specification requires that all Statements have a "verb" property, but does not restrict the values of that property; any Verb 
-can be used. This flexibility enables xAPI to be used in any context, including future use cases not envisaged by the 
-specification authors.
+xAPI strictly defines the structure of Statements, but is very flexible as to the contents of that structure. For example, the specification requires that all Statements have a "verb" property, but does not restrict the values of that property; any Verb can be used. This flexibility enables xAPI to be used in any context, including future use cases not envisaged by the specification authors.
 
-It is intended that [Communities of Practice (CoPs)](#def-community-of-practice) will define Verbs, Activity types, 
-contextual relationships, extensions, etc. 
-to be used in their profiles by providing unique identifiers wherever applicable. The CoP will define these identifiers and 
-their metadata in a [Vocabulary](#def-vocabulary). A profile is a set of rules and vocabularies to implemented in addition to 
-xAPI for the particular use case being addressed. It is very important that such communities exist and share best practices. 
-For more information on publishing vocabularies, see the [Vocabulary Companion Specification](https://adl.gitbooks.io/companion-specification-for-xapi-vocabularies/content) and [Vocabulary Primer](https://adl.gitbooks.io/experience-xapi-vocabulary-primer/content/) documents.
+It is intended that [Communities of Practice (CoPs)](#def-community-of-practice) will define Verbs, Activity types, contextual relationships, extensions, etc. to be used in their profiles by providing unique identifiers wherever applicable. The CoP will define these identifiers and their metadata in a [Vocabulary](#def-vocabulary). A profile is a set of rules and vocabularies to implemented in addition to xAPI for the particular use case being addressed. It is very important that such communities exist and share best practices. For more information on publishing vocabularies, see the [Vocabulary Companion Specification](https://adl.gitbooks.io/companion-specification-for-xapi-vocabularies/content) and [Vocabulary Primer](https://adl.gitbooks.io/experience-xapi-vocabulary-primer/content/) documents.
 
-It is recommended that a profile use a unique "category" within a Statement's context to refer to any Statement  
-which implements the profile.  An example profile is [cmi5](https://github.com/AICC/CMI-5_Spec_Current), 
-which is designed for the traditional single learner, single online learning use case.  An example cmi5 Statement can 
-be found in [Appendix B: cmi5 Example](#Appendix1B).
+It is recommended that a profile use a unique "category" within a Statement's context to refer to any Statement  which implements the profile.  An example profile is [cmi5](https://github.com/AICC/CMI-5_Spec_Current), which is designed for the traditional single learner, single online learning use case.  An example cmi5 Statement can be found in [Appendix B: cmi5 Example](#Appendix1B).
 
-CoPs are highly recommended to avoid duplication of effort, as creating too many ways to solve the same problem 
-will cause fragmentation in similar domains and can potentially hurt interoperability.  An example of a CoP for the medical 
-field is the [MedBiquitous Learning Experience Working Group](http://groups.medbiq.org/medbiq/display/XIG/Learning+Experience+Group+Home).
+CoPs are highly recommended to avoid duplication of effort, as creating too many ways to solve the same problem will cause fragmentation in similar domains and can potentially hurt interoperability.  An example of a CoP for the medical field is the [MedBiquitous Learning Experience Working Group](http://groups.medbiq.org/medbiq/display/XIG/Learning+Experience+Group+Home).
 </details>
 
 
@@ -733,16 +637,11 @@ field is the [MedBiquitous Learning Experience Working Group](http://groups.medb
 ### Appendix A: Revision History
 ###### 0.8 (Project Tin Can API Deliverable) to 0.9 (March 31, 2012)  
   
-Rustici Software, who delivered the Project Tin Can API, made modifications to the 
-API prior to the April 2012 Kickoff Meeting. It was voted in this meeting to 
-move those changes into the current specification and revision to 0.9.
+Rustici Software, who delivered the Project Tin Can API, made modifications to the API prior to the April 2012 Kickoff Meeting. It was voted in this meeting to move those changes into the current specification and revision to 0.9.
 
 ###### 0.90 to 0.95 (August 31, 2012)  
 
-"Core" Verbs and Activity types were removed from the specification. References 
-to these verbs in results, context, interactions, and Activity Definitions were 
-also removed. It was recommended that implementers prefer community defined 
-verbs to creating their own verbs.
+"Core" Verbs and Activity types were removed from the specification. References to these verbs in results, context, interactions, and Activity Definitions were also removed. It was recommended that implementers prefer community defined verbs to creating their own verbs.
 - Verbs, Activity types, and extension keys are now URIs
 - Restructured and added language around some of the other implementation details and scope.
 - Changed from using a person-centric view of Agents to a persona-centric view.
