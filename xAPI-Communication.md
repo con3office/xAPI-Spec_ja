@@ -1,23 +1,33 @@
+<details>
+<summary>en</summary>
+</details>
+
 # Experience API
 ## Advanced Distributed Learning (ADL) Co-Laboratories
 
->#### License
+>#### ライセンス
+>
+>Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defence
+>
+>Apache ライセンス、バージョン 2.0 (「ライセンス」) に基づいてライセンス供与されています。 ライセンスに準拠する場合を除き、このファイルを使用することはできません。 ライセンスのコピーは、http://www.apache.org/licenses/LICENSE-2.0 で入手できます。
+>
+>適用される法律で義務付けられている場合、または書面で合意されている場合を除き、ライセンスに基づいて配布されるソフトウェアは、明示または黙示を問わず、いかなる種類の保証または条件もなく、「現状のまま」で配布されます。 ライセンスに基づく許可と制限を管理する特定の言語については、ライセンスを参照してください。
+>
+>このドキュメントは、国防副次官補室 (人事・即応担当) の Advanced Distributed Learning (ADL) イニシアチブを支援しているExperience API Working Group のメンバー ([CONTRIBUTING.md](CONTRIBUTING.md#contributors) のリストを参照) によって作成されました。フィードバックやお問い合わせはすべて helpdesk@adlnet.gov までお送りください。
 
->"Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
+<details>
+<summary>en</summary>
 
->Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except 
->in compliance with the License. You may obtain a copy of the License at
->http://www.apache.org/licenses/LICENSE-2.0
+#### License
 
->Unless required by applicable law or agreed to in writing, software distributed under the License 
->is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express 
->or implied. See the License for the specific language governing permissions and limitations under 
->the License."
+"Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
 
->This document was authored by members of the Experience API Working Group (see 
->list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of 
->Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Please 
->send all feedback and inquiries to helpdesk@adlnet.gov  
+Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+
+This document was authored by members of the Experience API Working Group (see list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Please send all feedback and inquiries to helpdesk@adlnet.gov  
+</details>
 
 ## Table of Contents
 *	Part One:	[About the Experience API](./xAPI-About.md#partone)  
@@ -104,46 +114,81 @@
 <a name="partthree"></a>
 # Part Three: Data Processing, Validation, and Security 
 
+
+<details>
+<summary>en</summary>
+
 This third part details the more technical side of the Experience API, dealing with how Statements are transferred between 
 Learning Record Provider and LRS. A number of libraries are available for a range of technologies (including JavaScript) 
 which handle this part of the specification. It therefore might not be necessary for Learning Record Providers to fully 
 understand every detail of this part of the specification.
+</details>
+
 
 <a name="requests"></a>
 
 ## <a name="1.0">1.0</a> Requests
 
+
+<details>
+<summary>en</summary>
+
 xAPI tracking is done via HTTP Requests from the Learning Record Provider (client) to the LRS (server). This 
 specification offers guidance in some aspects of this communication.  Where no guidance is offered, it is 
 recommended that those implementing xAPI use current industry best practices.
+</details>
+
 
 <a name="httphead"></a>
 
 ### <a name="1.1">1.1</a> HEAD Request Implementation
 
 ###### <a name="1.1.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 The behavior of the LRS in response to PUT, POST, GET and DELETE requests is outlined in [Resources](#resources) below. 
 All resources that support GET requests also support HEAD.
 The LRS will respond to HEAD requests by returning the meta information only, using the HTTP headers, and 
 not the actual document.  
+</details>
 
 ###### <a name="1.1.s2"></a>Rationale
+
+
+<details>
+<summary>en</summary>
 
 Clients accessing the LRS might need to check if a particular Statement exists, or determine
 the modification date of documents such as those in State, Activity Profile, or Agent Profile Resources. Particularly
 for large documents, it is more efficient not to retrieve the entire document just to check its modification date.
+</details>
 
 ###### <a name="1.1.s3"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="1.1.s3.b1"></a>The LRS MUST respond to any HTTP HEAD request as it would have responded to an otherwise
 identical HTTP GET request except:
     * <a name="1.1.s3.b1.b1"></a>The message-body MUST be omitted.
     * <a name="1.1.s3.b1.b2"></a>The Content-Length header MAY be omitted, in order to avoid wasting LRS resources.
+</details>
+
 
 <a name="headers"></a> 
 
 ### <a name="1.2">1.2</a> Headers
 
 ##### <a name="1.2.s1"></a>Header Parameters
+
+
+<details>
+<summary>en</summary>
+
 Some header parameters used within xAPI data transfer are 
 [standard HTTP headers](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). Others are specific to this
  specification. The following request headers are expected to be used by the Learning Record Providers in some or all 
@@ -172,6 +217,8 @@ to every type of request and/or situations:
 * <a name="1.2.s1.b17"></a>X-Experience-API-Consistent-Through
 
 The lists above are not intended to be exhaustive. See requirements throughout this document for more details.
+</details>
+
 
 <a name="alt-request-syntax"></a>
 
@@ -180,19 +227,33 @@ The lists above are not intended to be exhaustive. See requirements throughout t
 
 ###### <a name="1.3.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 One of the goals of the xAPI is to allow cross-domain tracking, and even though xAPI seeks to enable tracking from 
 applications other than browsers, browsers still need to be supported. For example, Internet Explorer 8 and 9 do not 
 implement Cross Origin Resource Sharing, but rather use their own Cross Domain Request API, which cannot use all of 
 the xAPI as described above due to only supporting "GET" and "POST", and not allowing HTTP headers to be set.  
+</details>
 
 ###### <a name="1.3.s2"></a>Details/Requirements
+
+
+<details>
+<summary>en</summary>
 
 The following describes alternate syntax to use only when unable to use the usual syntax for specific calls due to the 
 restrictions mentioned above. This alternate syntax can also be used to GET Statements due to limits on query string length.  
 
 See [Appendix C: Cross Domain Request Example](#Appendix3C) for an example. 
+</details>
 
 ###### <a name="1.3.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 __Method__:  
 * <a name="1.3.s3.b1"></a>All xAPI requests issued MUST be POST. 
@@ -240,6 +301,8 @@ Two simple solutions might be to 1) set up a proxy pass through on the same sche
 intermediary server-side LRS on the same scheme as the Client code to route Statements to the target LRS.
 
 Strongly consider security risks before making the decision to use implementations that use HTTP.
+</details>
+
 
 <a name="encoding"></a> 
 
@@ -250,28 +313,51 @@ Strongly consider security risks before making the decision to use implementatio
 
 <a name="content-types"></a> 
 ### <a name="1.5">1.5</a> Content Types
+
+
+<details>
+<summary>en</summary>
+
 Requests and responses within this specification normally use an `application/json` content type. Exceptions to this are:
 
 * <a name="1.5.b1"></a>Documents can have any content type. 
 * <a name="1.5.b2"></a>Statement requests that can sometimes include Attachments use the `multipart/mixed` content type. 
+</details>
+
 
 <a name="applicationjson"></a> 
 #### <a name="1.5.1">1.5.1</a> Application/JSON
 Requests within this specification normally use an `application/json` content type. 
 
 ###### <a name="1.5.1.s1"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="1.5.1.s1.b1"></a>When receiving a PUT or POST with a document type of `application/json`, an LRS MUST accept batches 
 of Statements which contain no Attachment Objects.
 * <a name="1.5.1.s1.b2"></a>When receiving a PUT or POST with a document type of `application/json`, an LRS MUST accept batches 
 of Statements which contain only Attachment Objects with a populated fileUrl.
+</details>
+
 
 <a name="multipartmixed"></a> 
 #### <a name="1.5.2">1.5.2</a> Multipart/Mixed
 
+
+<details>
+<summary>en</summary>
+
 The `multipart/mixed` content type is used for requests that *could* include Attachments. This does not mean that all 
 "multipart/mixed" requests necessarily do include Attachments.
+</details>
 
 ##### <a name="1.5.2.s1"></a>Procedure For The Exchange Of Attachments
+
+
+<details>
+<summary>en</summary>
 
 * <a name="1.5.2.s1.b1"></a>A Statement request including zero or more Attachments is construed as described below.
 
@@ -282,8 +368,13 @@ at the end of such transmissions.
 
 * <a name="1.5.2.s1.b4"></a>If it accepts the request, it can match the raw data of an Attachment(s) with the 
 Attachment header by comparing the SHA-2 of the raw data to the SHA-2 declared in the header. It MUST not do so any other way.
+</details>
 
 ###### <a name="1.5.2.s2"></a>Requirements for Attachment Statement Batches
+
+
+<details>
+<summary>en</summary>
 
 A request transmitting a Statement batch, Statement results, or single Statement that includes Attachments MUST satisfy one of the 
 following criteria:
@@ -306,8 +397,13 @@ results when the "attachments" filter is `false`.
    	* <a name="1.5.2.s2.b2.b7"></a>Where parameters have a corresponding property within the attachment Object 
    	(outlined in the table above), and both the parameter and property are specified for a given Attachment, 
 	the value of these parameters and properties MUST match. 
+</details>
 
 ###### <a name="1.5.2.s3"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="1.5.2.s3.b1"></a>An LRS MUST include Attachments in the Transmission Format described above
 when requested by the Client (see [Statement Resource](#stmtres)).
@@ -327,8 +423,13 @@ of Statements which contain no Attachment Objects.
 of Statements which contain only Attachment Objects with a populated fileUrl.
 
 __Note:__ There is no requirement that Statement batches using the "mime/multipart" format contain Attachments.
+</details>
 
 ###### <a name="1.5.2.s4"></a>Learning Record Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="1.5.2.s4.b1"></a>A Learning Record Provider MAY send Statements with Attachments as described above.
 * <a name="1.5.2.s4.b2"></a>A Learning Record Provider MAY send multiple Statements where some or all have 
@@ -336,8 +437,14 @@ Attachments if using POST.
 * <a name="1.5.2.s4.b3"></a>A Learning Record Provider MAY send batches of type `application/json` where every attachment
 Object has a fileUrl, ignoring all requirements based on the "multipart/mixed" format.
 * <a name="1.5.2.s4.b4"></a>A Learning Record Provider SHOULD use SHA-256, SHA-384, or SHA-512 to populate the "sha2" property.
+</details>
 
 ###### <a name="1.5.2.s5"></a>File URL
+
+
+<details>
+<summary>en</summary>
+
 The File URL is intended to provide a location from which the Attachment can be received.
 There are, however, no requirements for the owner of the Attachment to make the 
 Attachment data available at the location indefinitely or to make the Attachment publically
@@ -351,8 +458,13 @@ of the Statement, especially if the Attachment content is not included with the 
 
 The period of time an Attachment is made available for, and the security restrictions applied to
 hosted attachments, are out of scope of this specification. 
+</details>
 
 ###### <a name="1.5.2.s6"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 Below is an example of a very simple Statement with an Attachment. Please note the following:
 
@@ -420,9 +532,15 @@ X-Experience-API-Hash:495395e777cd98da653df9615d09c0fd6bb2f8d4788394cd53c56a3bfd
 here is a simple attachment
 --abcABC0123'()+_,-./:=?--
 ```
+</details>
+
 
 <a name="datatransfer"></a> <a name="resources"></a>
 ## <a name="2.0">2.0</a> Resources
+
+
+<details>
+<summary>en</summary>
 
 The LRS is interacted with via RESTful HTTP methods to the resources outlined in this section.
 The Statement Resource can be used by itself to track learning records. Other resources provide
@@ -437,8 +555,13 @@ Such a system is not considered to be an LRS or 'partial LRS'; it is simply not 
 __Note:__ In all of the example endpoints where xAPI resources are located given in the specification, `http://example.com/xAPI/` 
 is the example base endpoint of the LRS. All other IRI syntax after this represents the particular resource used. 
 A full list of the endpoints is included in [Appendix B: Table of All Resources](#Appendix3B).
+</details>
 
 ###### <a name="2.0.s1"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.0.s1.b1"></a>The LRS MUST support all of the resources described in this section. 
 * <a name="2.0.s1.b2"></a>If the LRS implements OAuth 1.0, the LRS MUST also support all of the OAuth resources 
@@ -447,6 +570,8 @@ described in [OAuth Authorization Scope](#oauthscope).
 * <a name="2.0.s1.b4"></a>Past, current and future versions of this specification do not and will not define endpoints 
 with path segments starting with `extensions/`. LRSs supporting additional resources not defined in this specification SHOULD 
 define their endpoints with path segments starting with `extensions/`.
+</details>
+
 
 <a name="stmtres"></a> 
 
@@ -462,6 +587,10 @@ The basic communication mechanism of the Experience API.
 
 ###### <a name="2.1.1.s1"></a>Details
 
+
+<details>
+<summary>en</summary>
+
 Example endpoint: `http://example.com/xAPI/statements`
 
 Stores a single Statement with the given id. POST can also be used to store single Statements.
@@ -475,8 +604,13 @@ Stores a single Statement with the given id. POST can also be used to store sing
 	<tr id="2.1.1.s1.table1.row1"><td>statementId</td><td>String</td><td> 
 	<td>Id of Statement to record</td></td><td>Required</td></tr>
 </table>
+</details>
 
 ###### <a name="2.1.1.s2"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.1.1.s2.b1"></a>The LRS MAY respond before Statements that have been stored are available for retrieval.
 
@@ -490,21 +624,32 @@ do not match. See [Statement comparison requirements](./xAPI-Data.md#statement-c
 
 * <a name="2.1.1.s2.b4"></a>If the LRS receives a batch of Statements containing two or more Statements with the same id, 
 it SHOULD* reject the batch and return `400 Bad Request`.
+</details>
 
 
 
 ###### <a name="2.1.1.s3"></a>Learning Record Provider Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.1.1.s3.b1"></a>Learning Record Providers SHOULD POST Statements including the Statement "id" property 
 instead of using PUT. 
 * <a name="2.1.1.s3.b2"></a>When PUTing Statements, the "id" property of the Statement SHOULD be used. 
 * <a name="2.1.1.s3.b3"></a>Where provided, the "id" property of the Statement MUST match the "statementId" parameter of the request. 
+</details>
+
 
 <a name="stmtrespost"></a>
 
 #### <a name="2.1.2">2.1.2</a> POST Statements
 
 ###### <a name="2.1.2.s1"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: `http://example.com/xAPI/statements`
 
@@ -513,8 +658,13 @@ Stores a Statement, or a set of Statements.
 **Content:** An array of Statements or a single Statement to be stored. 
 
 **Returns:** `200 OK`, Array of Statement id(s) (UUID) in the same order as the corresponding stored Statements.  
+</details>
 
 ###### <a name="2.1.2.s2"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.1.2.s2.b1"></a>The LRS MAY respond before Statements that have been stored are available for retrieval.
 * <a name="2.1.2.s2.b2"></a>GET Statements MAY be called using POST and form parameters if necessary as query strings 
@@ -529,12 +679,18 @@ verify the received Statement matches the existing one and SHOULD return `409 Co
 do not match. See [Statement comparison requirements](./xAPI-Data.md#statement-comparison-requirements).
 * <a name="2.1.2.s2.b6"></a>If the LRS receives a batch of Statements containing two or more Statements with the same id, 
 it SHOULD* reject the batch and return `400 Bad Request`.
+</details>
+
 
 <a name="stmtresget"></a>
 
 #### <a name="2.1.3">2.1.3</a> GET Statements
 
 ###### <a name="2.1.3.s1"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: `http://example.com/xAPI/statements`
 
@@ -705,7 +861,13 @@ retrieve them will be included in the StatementResult Object.
 </table>
 
 __Note:__ The values of Boolean parameters are represented as `true` or `false` as in JSON.
+</details>
+
 ###### <a name="2.1.3.s2"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.1.3.s2.b1"></a>The LRS MUST reject with a `400 Bad Request` error any requests to this resource 
 which contain both statementId and voidedStatementId parameters
@@ -734,10 +896,16 @@ include Attachment raw data and MUST report `application/json`.
 
 * <a name="2.1.3.s2.b8"></a>The LRS SHOULD* include a "Last-Modified" header which matches the "stored" Timestamp 
 of the Statement. 
+</details>
+
 
 <a name="queryStatementRef"></a>
 
 ###### <a name="2.1.3.s3"></a>Filter Conditions for StatementRefs
+
+
+<details>
+<summary>en</summary>
 
 This section outlines rules by which Statements targeting other Statements can sometimes be considered to 
 meet the filter conditions of a query even if they do not match the original query's filter parameters. 
@@ -764,10 +932,16 @@ being fetched.
 
 __Note:__ StatementRefs used as a value of the "Statement" property within Context do not affect how
 Statements are filtered.
+</details>
+
 
 <a name="queryLangFiltering"></a>
 
 ###### <a name="2.1.3.s4"></a>Language Filtering Requirements for Canonical Format Statements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.1.3.s4.b1"></a>Activity Objects contain Language Map Objects within their "name", "description" and various 
 interaction components. The LRS MUST return only one language in each of these maps. 
@@ -785,18 +959,29 @@ language maps used within extensions.
 described in [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) 
 (HTTP 1.1), except that this logic MUST be applied to each language map individually to select 
 which language entry to include, rather than to the resource (list of Statements) as a whole.
+</details>
+
 
 <a name="voidedStatements"></a>
 
 ##### <a name="2.1.4">2.1.4</a> Voided Statements
+
+<details>
+<summary>en</summary>
+
 [Part Two](./xAPI-Data.md#voided) describes the process by which Statements can be voided. This section
 describes how voided Statements are handled by the LRS when queried. 
 
 Clients can identify the presence and Statement id of any voided Statements by the target of the voiding Statement. 
 Aside from debugging tools, many Learning Record Consumers will not want to display voiding Statements to their users 
 and will not display these as part of activity streams and other reports. 
+</details>
 
 ###### <a name="2.1.4.s1"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.1.4.s1.b1"></a>The LRS MUST not return any Statement which has been voided, unless that Statement has been 
 requested by voidedStatementId. The process described in [the section on filter conditions for StatementRefs](#queryStatementRef) 
@@ -806,16 +991,29 @@ individually by voidedStatementId.
 * <a name="2.1.4.s1.b2"></a>The LRS MUST still return any Statements targeting the voided Statement, following the process 
 and conditions described in [the section on filter conditions for StatementRefs](#queryStatementRef). This includes the 
 voiding Statement, which cannot be voided. 
+</details>
+
 
 <a name="doctransfer"></a>
 
 ### <a name="2.2">2.2</a> Document Resources 
 
 ##### <a name="2.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 The Experience API provides a facility for Learning Record Providers to save arbitrary data in 
 the form of documents, perhaps related to an Activity, Agent, or combination of both.
+</details>
 
 ##### <a name="2.2.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
+
 Note that the following table shows generic properties, not a JSON Object as many other tables 
 in this specification do. The id is stored in the IRL, "updated" is HTTP header information, and 
 "contents" is the HTTP document itself (as opposed to an Object).
@@ -829,8 +1027,13 @@ in this specification do. The id is stored in the IRL, "updated" is HTTP header 
 
 The three Document Resources provide [document](./xAPI-Data.md#documents) storage.  The details of each resource are found in 
 the following sections, and the information in this section applies to all three resources.
+</details>
 
 ###### <a name="2.2.s3"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 <table>
 	<tr>
@@ -858,24 +1061,46 @@ the following sections, and the information in this section applies to all three
 		<td>http://example.com/xAPI/agents/profile</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.2.s4"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.2.s4.b1"></a>A Learning Record Provider MAY send documents to any of the Document Resources for Activities and 
 Agents that the LRS does not have prior knowledge of. 
 
 * <a name="2.2.s4.b2"></a>The LRS MUST NOT reject documents on the basis of not having prior knowledge of the Activity and/or Agent.
+</details>
 
 ##### <a name="2.2.s5"></a>Last Modified
+
+
+<details>
+<summary>en</summary>
+
 The "Last Modified" header is set by the LRS when returning single or multiple documents in response to a GET request. 
+</details>
 
 ###### <a name="2.2.s6"></a>Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="2.2.s6.b1"></a>When returning a single document, the LRS SHOULD* include a "Last-Modified" header indicating when
 the document was last modified. 
 * <a name="2.2.s6.b2"></a>When returning multiple documents, the LRS SHOULD* include a "Last-Modified" header indicating when
 the most recently modified document was last modified. 
+</details>
 
 ###### <a name="2.2.s7"></a>JSON Procedure with Requirements
+
+
+<details>
+<summary>en</summary>
 
 If a Learning Record Provider stores variables as JSON Objects in a document with content type `application/json`, 
 they can manipulate them as sets of variables using POST.
@@ -916,8 +1141,14 @@ the resulting document stored in the LRS is:
 	"z" : "faz"
 }
 ```
+</details>
+
 
 ###### <a name="2.2.s8"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.2.s8.b1"></a>If the document being posted or any existing document does not have a Content-Type
 of `application/json`, or if either document cannot be parsed as a JSON Object, the LRS MUST
@@ -928,6 +1159,8 @@ as a result of the request.
 
 * <a name="2.2.s8.b3"></a>If a Learning Record Provider needs to delete a property, it SHOULD use a PUT request to replace 
 the whole document as described below. 
+</details>
+
 
 <a name="stateres"></a> 
 
@@ -935,17 +1168,31 @@ the whole document as described below.
 
 ##### <a name="2.3.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 Generally, this is a scratch area for Learning Record Providers that do not have their own internal storage, 
 or need to persist state across devices. 
+</details>
 
 ##### <a name="2.3.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The semantics of the call are driven by the "stateId" parameter. If it is included, the GET and DELETE methods will 
 act upon a single defined state document identified by "stateId". Otherwise, GET will return the available ids, 
 and DELETE will delete all state in the context given through the other parameters. This resource has
 [Concurrency](#concurrency) controls associated with it.
+</details>
 
 ###### <a name="2.3.s3"></a>Single Document (PUT | POST | GET | DELETE)
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/activities/state
 
@@ -984,8 +1231,13 @@ exists in the context of the specified Activity, Agent, and registration (if spe
 		<td>Required</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.3.s4"></a>Multiple Document GET
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/activities/state
 
@@ -1024,8 +1276,13 @@ timestamp (exclusive).
 		<td>Optional</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.3.s5"></a>Multiple Document DELETE
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/activities/state
 
@@ -1055,17 +1312,28 @@ Deletes all state data for this context (Activity + Agent \[+ registration if sp
 		<td>Optional</td>
 	</tr>
 </table>
+</details>
+
 
 <a name="agentsres"></a>
 
 ### <a name="2.4">2.4</a> Agents Resource
 
+
+<details>
+<summary>en</summary>
+
 The Agents Resource provides a method to retrieve a special Object with combined information about an Agent derived from 
 an outside service, such as a directory service. This resource has [Concurrency](#concurrency) controls associated with it.
+</details>
 
 ###### <a name="2.4.s1"></a>Combined Information GET
 
 ###### <a name="2.4.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/agents
 
@@ -1091,8 +1359,14 @@ It is not a Person Object, nor is it a Group.
 		<td>Required</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.4.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.s3.b1"></a>An LRS capable of returning multiple identifying properties for a Person 
 Object SHOULD require the connecting credentials have increased, explicitly 
 given permissions. 
@@ -1104,10 +1378,15 @@ include the information associated with the requested Agent.
 __Note:__ This means that if a request is made for an Agent which the LRS has no 
 prior knowledge of, it will still return a Person object containing the information 
 about the Agent it received in the request. 
+</details>
 
 ###### <a name="2.4.s4"></a>Person Properties
 
 ###### <a name="2.4.s5"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 <table>
 	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -1151,23 +1430,39 @@ about the Agent it received in the request.
 </table>
 
 See also: [Agent](./xAPI-Data.md#agent).
+</details>
 
 ###### <a name="2.4.s6"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.s6.b1"></a>All array properties MUST be populated with members with the same definition as the 
 similarly named property from Agent Objects.  
 
 * <a name="2.4.s6.b2"></a>Additional properties not listed here SHOULD* NOT be added to this object and each 
 property MUST occur only once. 
+</details>
+
 
 <a name="activitiesres"></a> 
 
 ### <a name="2.5">2.5</a> Activities Resource
 
+
+<details>
+<summary>en</summary>
+
 The Activities Resource provides a method to retrieve a full description of an Activity from the LRS. 
 This resource has [Concurrency](#concurrency) controls associated with it.
+</details>
 
 ###### <a name="2.5.s1"></a>Full Activity Object GET
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/activities
 
@@ -1185,11 +1480,18 @@ Loads the complete Activity Object specified.
 		<td>Required</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.5.s2"></a>Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.5.s2.b1"></a>If an LRS does not have a canonical definition of the Activity to return, the LRS SHOULD* 
 still return an Activity Object when queried.
+</details>
+
 
 <a name="agentprofres"></a>
 
@@ -1197,15 +1499,29 @@ still return an Activity Object when queried.
 
 ###### <a name="2.6.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 The Agent Profile Resource is much like the State Resource, allowing for arbitrary key / document pairs to be saved 
 which are related to an Agent. 
+</details>
 
 ###### <a name="2.6.s2"></a>Details
 
+
+<details>
+<summary>en</summary>
+
 The semantics of the request are driven by the "profileId" parameter. If it is included, the GET method will act upon 
 a single defined document identified by "profileId". Otherwise, GET will return the available ids.  
+</details>
 
 ###### <a name="2.6.s3"></a>Single Agent or Profile Document (PUT | POST | GET | DELETE)
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/agents/profile
 
@@ -1235,8 +1551,13 @@ Stores, changes, fetches, or deletes the specified Profile document in the conte
 
 __Note:__ The "agent" parameter is an Agent Object and not a Group. Learning Record Providers wishing to store data
 against an Identified Group can use the Identified Group's identifier within an Agent Object. 
+</details>
 
 ###### <a name="2.6.s4"></a>Multiple Document GET
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/agents/profile
 
@@ -1263,6 +1584,8 @@ that have been stored or updated since the specified Timestamp (exclusive).
 		<td>Optional</td>
 	</tr>
 </table>
+</details>
+
 
 <a name="actprofres"></a> 
 
@@ -1270,16 +1593,30 @@ that have been stored or updated since the specified Timestamp (exclusive).
 
 ###### <a name="2.7.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 The Activity Profile Resource is much like the State Resource, allowing for arbitrary key / document pairs to be saved 
 which are related to an Activity. 
+</details>
 
 ###### <a name="2.7.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The semantics of the request are driven by the "profileId" parameter. If it is included, 
 the GET method will act upon a single defined document identified by "profileId". 
 Otherwise, GET will return the available ids.
+</details>
 
 ###### <a name="2.7.s3"></a>Single Document (PUT | POST | GET | DELETE)
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/activities/profile
 
@@ -1305,8 +1642,13 @@ Stores, changes, fetches, or deletes the specified Profile document in the conte
 		<td>Required</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.7.s4"></a>Multiple Document GET
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/activities/profile
 
@@ -1333,6 +1675,7 @@ entries that have been stored or updated since the specified Timestamp (exclusiv
 		<td>Optional</td>
 	</tr>
 </table>
+</details>
 
 
 <a name="aboutresource"></a> 
@@ -1341,16 +1684,30 @@ entries that have been stored or updated since the specified Timestamp (exclusiv
 
 ###### <a name="2.8.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 Returns JSON Object containing information about this LRS, including the xAPI version supported.
+</details>
 
 ###### <a name="2.8.s2"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 Primarily this resource exists to allow Clients that support multiple xAPI versions to decide which version to 
 use when communicating with the LRS. Extensions are included to allow other uses to emerge.
+</details>
 
 ###### <a name="2.8.s3"></a>Details
 
 ###### <a name="2.8.s4"></a>Information GET
+
+
+<details>
+<summary>en</summary>
 
 Example endpoint: http://example.com/xAPI/about
 
@@ -1373,8 +1730,13 @@ Example endpoint: http://example.com/xAPI/about
 	</tr>
 
 </table>
+</details>
 
 ###### <a name="2.8.s5"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.8.s5.b1"></a>An LRS MUST return the JSON document described above, with a "version" property that includes
 the latest minor and patch version the LRS conforms to, for each major version.
@@ -1386,6 +1748,8 @@ property MUST occur only once.
 * <a name="2.8.s5.b3"></a>An LRS SHOULD allow unauthenticated access to this resource.
 * <a name="2.8.s5.b4"></a>An LRS MUST NOT reject requests based on their version header as would otherwise be 
 required by [Versioning](#versioning).
+</details>
+
 
 <a name="validation"></a> 
 
@@ -1393,25 +1757,47 @@ required by [Versioning](#versioning).
 
 ###### <a name="3.0.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 The function of the LRS within the xAPI is to store and retrieve Statements. As long as it has sufficient information 
 to perform these tasks, it is expected that it does them. Validation of Statements in the Experience API is focused 
 solely on syntax, not semantics. Enforcing the rules that ensure valid meaning among Verb definitions, Activity types, 
 and extensions is the responsibility of the Learning Record Provider sending the Statement. 
+</details>
 
 ###### <a name="3.0.s2"></a>Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="3.0.s2.b1"></a>The LRS SHOULD enforce rules regarding structure. 
 * <a name="3.0.s2.b2"></a>The LRS SHOULD NOT enforce rules regarding meaning.  
+</details>
+
 
 <a name="concurrency"></a>
 
 ### <a name="3.1">3.1</a> Concurrency
 
 ##### <a name="3.1.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 Concurrency control makes certain that a client does not PUT, POST or DELETE documents based on old
 data into an LRS.
+</details>
 
 ##### <a name="3.1.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
+
 xAPI will use HTTP 1.1 entity tags ([ETags](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19))
 to implement optimistic concurrency control in the portions of the API where PUT, POST or DELETE might
 overwrite or remove existing data, being:
@@ -1419,8 +1805,14 @@ overwrite or remove existing data, being:
 * <a name="3.1.s2.b1"></a>State Resource
 * <a name="3.1.s2.b2"></a>Agent Profile Resource 
 * <a name="3.1.s2.b3"></a>Activity Profile Resource
+</details>
 
 ##### <a name="3.1.s3"></a>Client Requirements
+
+
+<details>
+<summary>en</summary>
+
 The State Resource will permit PUT, POST and DELETE requests without concurrency headers, since state conflicts
 are unlikely. The requirements below only apply to Agent Profile Resource and Activity Profile Resource.
 
@@ -1436,8 +1828,13 @@ Resource SHOULD* include the "[If-Match](http://www.w3.org/Protocols/rfc2616/rfc
 Resource SHOULD* include the "[If-Match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.24)" header.
 
 * <a name="3.1.s3.b4"></a>Clients SHOULD* use the ETag value provided by the LRS rather than calculating it themselves. 
+</details>
 
 ##### <a name="3.1.s4"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.1.s4.b1"></a>An LRS responding to a GET request MUST add an ETag HTTP header to the response.
 * <a name="3.1.s4.b2"></a>An LRS responding to a GET request without using a transfer encoding or using the identity 
@@ -1475,12 +1872,18 @@ If a PUT request is received without either header for a resource that already e
 	* <a name="3.1.s4.b14.b1"></a>check the current state of the resource.
 	* <a name="3.1.s4.b14.b2"></a>set the "If-Match" header with the current ETag to resolve the conflict.
 * <a name="3.1.s4.b15"></a>MUST NOT make a modification to the resource.
+</details>
+
 
 <a name="errorcodes"></a> 
 
 ### <a name="3.2">3.2</a> Error Codes
 
 ##### <a name="3.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
 
 This specification defines requirements, some of which are imposed on the LRS to accept or reject requests,
 return responses and perform other behaviors in certain conditions. In cases where an LRS is required 
@@ -1519,8 +1922,14 @@ are sufficiently high so as not to affect the running of tests.
 The LRS can also reject requests or revoke credentials in case of suspected malicious intent, for example
 an unexpected large number of requests made in a short period of time. It is expected that that limits 
 will be sufficiently high such that the rate of requests made during conformance testing will not trigger any rate limits.
+</details>
 
 ##### <a name="3.2.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
+
 The list below offers some general guidance on HTTP error codes that could be returned from various methods in the API. 
 
 * <a name="3.2.s2.b1"></a>`400 Bad Request` - Indicates
@@ -1555,8 +1964,13 @@ has received too many requests from the Client or set of credentials in a given 
 
 * <a name="3.2.s2.b9"></a>`500 Internal Server Error` - Indicates a general error condition, typically an 
 unexpected exception in processing on the server.
+</details>
 
 ##### <a name="3.2.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.2.s3.b1"></a>An LRS MUST return the error code most appropriate to the error condition from the list above.
 
@@ -1609,6 +2023,8 @@ on live systems.
 size (see above).
 
 * <a name="3.2.s3.b17"></a>The LRS MUST be configurable to accept requests at any reasonable rate. 
+</details>
+
 
 <a name="versioning"></a> 
 
@@ -1616,10 +2032,19 @@ size (see above).
 
 ###### <a name="3.3.s1"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 Future revisions of the specification might introduce changes such as properties added to Statements. Using Semantic 
 Versioning will allow Clients and LRSs to remain interoperable as the specification changes.
+</details>
 
 ###### <a name="3.3.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Starting with version 1.0.0, xAPI will be versioned according to [Semantic Versioning 1.0.0](http://semver.org/spec/v1.0.0.html).  
 Every request from a Client and every response from the LRS includes an HTTP header with the name `X-Experience-API-Version` 
@@ -1631,8 +2056,13 @@ __Note:__ For patch versions of the specification later than 1.0.0, the "X-Exper
 "X-Experience-API-Version" header enables the LRS and Client to determine the exact patch version of the specification being 
 followed. While no communication incompatibility should arise among 1.0.x versions, there are sometimes clarifications 
 of previously intended behavior.
+</details>
 
 ###### <a name="3.3.s3"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.3.s3.b1"></a>The LRS MUST include the "X-Experience-API-Version" header in every response.
 * <a name="3.3.s3.b2"></a>The LRS MUST set this header to the latest patch version.
@@ -1645,21 +2075,33 @@ routed to a fully conformant 0.9 implementation.
 * <a name="3.3.s3.b6"></a>The LRS MUST reject requests with a version header of `1.1.0` or greater.
 * <a name="3.3.s3.b7"></a>The LRS MUST make these rejects by responding with a `400 Bad Request` error including a short 
 description of the problem.
+</details>
 
 ###### <a name="3.3.s4"></a>Client Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.3.s4.b1"></a>The Client MUST include the "X-Experience-API-Version" header in every request.
 * <a name="3.3.s4.b2"></a>The Client MUST set this header to the latest patch version.
 * <a name="3.3.s4.b3"></a>The Client SHOULD tolerate receiving responses with a version of `1.0.0` or greater.
 * <a name="3.3.s4.b4"></a>The Client SHOULD tolerate receiving data structures with additional properties.
 * <a name="3.3.s4.b5"></a>The Client SHOULD ignore any properties not defined in version 1.0.0 of the spec.
+</details>
 
 ###### <a name="3.3.s5"></a>Conversion Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.3.s5.b1"></a>Statements of newer versions MUST NOT be converted into a prior version format, e.g., in order 
 to handle version differences.
 * <a name="3.3.s5.b2"></a>Statements of prior versions MAY be converted into a newer version only by following the methods 
 described in [Appendix A: Converting Statements to 1.0.0](#Appendix3A).
+</details>
+
 
 <a name="authentication"></a>
 
@@ -1667,10 +2109,20 @@ described in [Appendix A: Converting Statements to 1.0.0](#Appendix3A).
 
 ###### <a name="4.0.s1"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 In order to balance interoperability and the varying security requirements of different environments, several 
 authentication options are defined.
+</details>
 
 ###### <a name="4.0.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
+
 The following authentication methods are defined within the specification. Any given LRS will implement at least one 
 of these methods and might implement additional methods not defined within this specification. 
 
@@ -1686,18 +2138,29 @@ specification.
 
 No further details are provided in this specification to describe HTTP Basic Authentication as this authentication method
 is clearly and completely defined in [RFC 7235](http://tools.ietf.org/html/rfc7235). 
+</details>
 
 ###### <a name="4.0.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="4.0.s3.b1"></a>The LRS MUST support authentication using at least one of the authentication methods defined 
 in this specification.
 
 * <a name="4.0.s3.b2"></a>The LRS MUST handle making, or delegating, decisions on the validity of Statements, and 
 determining what operations might be performed based on the credentials used.
+</details>
+
 
 <a name="authdefs"></a>
 
 ### <a name="4.1">4.1</a> OAuth 1.0 Authentication Scenarios and Methods
+
+
+<details>
+<summary>en</summary>
 
 The matrix and requirements below describe the possible authentication scenarios used within OAuth and recommends the 
 authentication workflow to be used in these scenarios. The process described for each scenario is not intended 
@@ -1735,8 +2198,13 @@ A **known user** is a user account on the LRS, or on a system which the LRS trus
 </tr>
 
 </table>
+</details>
 
 ##### <a name="4.1.s2"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="4.1.s2.b1"></a>The LRS MUST record the application's name and a unique consumer key (identifier).
 * <a name="4.1.s2.b2"></a>The LRS MUST provide a mechanism to complete this registration, or delegate to another system 
@@ -1748,8 +2216,14 @@ that provides such a mechanism.
 	* <a name="4.1.s2.b4.b1"></a>Support a subset of the methods below.
 	* <a name="4.1.s2.b4.b2"></a>Limit the known users or registered applications.
 * <a name="4.1.s2.b5"></a>The LRS SHOULD at a minimum supply OAuth with "HMAC-SHA1" and "RSA-SHA1" signatures.
+</details>
 
 ###### <a name="4.1.s3"></a>Application registered + known user Process and Requirements
+
+
+<details>
+<summary>en</summary>
+
 **Process:** The standard workflow for OAUth 1.0 is used. 
 
 **Requirements:**
@@ -1768,8 +2242,13 @@ and token secret.
 **Requirements:**
 * <a name="4.1.s4.b1"></a>If this form of authentication is used to record Statements, the LRS SHOULD record the authority 
 as the Agent representing the registered application.
+</details>
 
 ###### <a name="4.1.s5"></a>Application Not Registered + Known User Process and Requirements
+
+
+<details>
+<summary>en</summary>
 
 **Process:**
 The Learning Record Provider uses a consumer secret consisting of an empty string to call the Temporary Credential 
@@ -1785,16 +2264,27 @@ Otherwise the process follows the standard OAuth workflow.
 **Requirements:**
 * <a name="4.1.s5.b1"></a>If this form of authentication is used to record Statements, the LRS MUST record an authority 
 that includes both that application and the authenticating user, as a Group, since OAuth specifies an application.
+</details>
 
 ###### <a name="4.1.s6"></a>No Application + Known User Process and Requirements
+
+
+<details>
+<summary>en</summary>
+
 **Process:**
 Use a username/password combination provided by the LRS for use by the known user.
 
 **Requirements:**
 * <a name="4.1.s6.b1"></a>If this form of authentication is used to record Statements, the LRS SHOULD 
 record the authority as the Agent representing the known user.
+</details>
 
 ###### <a name="4.1.s7"></a>No Authorization Process and Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="4.1.s7.b1"></a>Requests MUST include headers for HTTP Basic Authentication based on a username and password 
 containing zero or more space characters. 
@@ -1804,12 +2294,19 @@ encoded version of the string `:`.  This results in the string `Basic Og==`.
 
 This is in order to distinguish an explicitly unauthenticated request from a request that needs to be given a 
 HTTP Basic Authentication challenge.
+</details>
+
 
 <a name="oauthscope"></a> 
 
 ### <a name="4.2">4.2</a> OAuth 1.0 Authorization Scope
 
 ##### <a name="4.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 These are recommendations for scopes designed to enable an LRS and an application communicating using the xAPI to 
 negotiate a level of access which accomplishes what the application needs while minimizing the potential for misuse. 
 The limitations of each scope are in addition to any security limitations placed on the user account associated 
@@ -1819,8 +2316,13 @@ Elements of this section draw on [OAuth 2.0](http://tools.ietf.org/html/rfc6749#
 despite this section describing requirements for LRS supporting [OAuth 1.0](http://tools.ietf.org/html/rfc5849). 
 
 The requirements in this section only apply if the LRS supports OAuth 1.0.
+</details>
 
 ##### <a name="4.2.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The following table lists xAPI scope values:  
 <table>
@@ -1860,8 +2362,14 @@ The following table lists xAPI scope values:
 	<tr id="4.2.s2.table1.row6"><td>all/read</td><td>unrestricted read access</td></tr>
 	<tr id="4.2.s2.table1.row7"><td>all</td><td>unrestricted access</td></tr>
 </table>
+</details>
 
 ###### <a name="4.2.s3"></a>OAuth Resources
+
+
+<details>
+<summary>en</summary>
+
 <table>
 	<tr>
 		<th>Name</th>
@@ -1884,13 +2392,24 @@ The following table lists xAPI scope values:
 		<td>http://example.com/xAPI/OAuth/token </td>
 	</tr>
 </table>
+</details>
 
 ##### <a name="4.2.s4"></a>Example
+
+
+<details>
+<summary>en</summary>
+
 The list of scopes determines the set of permissions that is being requested. For example, an instructor might grant 
 "statements/read" to an application (Client), but the LRS would still limit that tool to Statements that the instructor could 
 read if querying the LRS with their credentials directly (such as Statements relating to their students).
+</details>
 
 ##### <a name="4.2.s5"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="4.2.s5.b1"></a>The LRS MUST accept a scope parameter as defined in [OAuth 2.0](http://tools.ietf.org/html/rfc6749#section-3.3).
 * <a name="4.2.s5.b2"></a>The LRS MUST assume a requested scope of "statements/write" and "statements/read/mine" if no 
@@ -1901,10 +2420,16 @@ scope is specified.
 request will be granted.
 * <a name="4.2.s5.b6"></a>The parameters "consumer_name" and "scope" are not part of OAuth 1.0, and therefore if used MUST be passed 
 as query string or form parameters, not in the OAuth header.  
+</details>
+
 
 <a name="security"></a>
 
 ## <a name="5.0">5.0</a> Security 
+
+
+<details>
+<summary>en</summary>
 
 Security beyond authentication (including the interpretation of OAuth authorization scopes) is beyond the current 
 scope of this document and left to the individual LRS provider as an implementation detail. Implementors are encouraged 
@@ -1918,6 +2443,8 @@ is able to pass conformance tests.
 While other security concerns are beyond the scope of this specification, the xAPI Community remains dedicated to determining 
 security best practices. This effort has begun at [xAPIsec](https://github.com/xapisec/xapisec). 
 Participation is highly encouraged.
+</details>
+
 
 <a name="append3"></a>
 ## <a name="5.0.s1"></a>Appendices
@@ -1927,13 +2454,23 @@ Participation is highly encouraged.
 ### <a name="A">Appendix A</a>: Converting Statements to 1.0.0
 
 ###### <a name="A.s1"></a>Rationale
+
+
+<details>
+<summary>en</summary>
+
 This is a 1.0.0 specification, and as such implementers do not have to consider prior versions of the specification. 
 However, prior versions did see notable adoption. This data conversion is specified in order to preserve the data 
 tracked using earlier versions, and make it available to new implementers in a consistent manner.
+</details>
 
 ###### <a name="A.s2"></a>Details
 
 ###### <a name="A.s3"></a>Conversion of Statements created based on version 0.9
+
+
+<details>
+<summary>en</summary>
 
 A 1.0.0 Client or other system converting a Statement created in 0.9 MUST follow the steps below:
 
@@ -1960,8 +2497,13 @@ with a homePage set to the home page corresponding to the system performing the 
 * <a name="A.s3.b10"></a>If the "statement" property in Context was set, remove it from the Statement.
 * <a name="A.s3.b11"></a>Preserve all other properties without modification, including the "stored" property. The "stored" 
 property will still be updated if the Statement is sent to an LRS.
+</details>
 
 ###### <a name="A.s4"></a>Conversion of Statements created based on version 0.95
+
+
+<details>
+<summary>en</summary>
 
 A 1.0.0 Client or other system converting a Statement created in 0.95 MUST follow the steps below:
 
@@ -1975,6 +2517,7 @@ with a homePage set to the home page corresponding to the system performing the 
 remove it from the Statement.
 * <a name="A.s4.b6"></a>Preserve all other properties without modification, including the "stored" property. The "stored" 
 property will still be updated if the Statement is sent to an LRS.
+</details>
 
 
 ###### <a name="A.s5"></a>Example
