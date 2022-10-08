@@ -8,13 +8,13 @@
 
 >#### ライセンス
 >
->Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defence Apache ライセンス、バージョン 2.0 (「ライセンス」) に基づいてライセンス供与されています。 ライセンスに準拠する場合を除き、このファイルを使用することはできません。 ライセンスのコピーは、http://www.apache.org/licenses/LICENSE-2.0 で入手できます。
+>Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defence
+>
+>Apache ライセンス、バージョン 2.0 (「ライセンス」) に基づいてライセンス供与されています。 ライセンスに準拠する場合を除き、このファイルを使用することはできません。 ライセンスのコピーは、http://www.apache.org/licenses/LICENSE-2.0 で入手できます。
 >
 >適用される法律で義務付けられている場合、または書面で合意されている場合を除き、ライセンスに基づいて配布されるソフトウェアは、明示または黙示を問わず、いかなる種類の保証または条件もなく、「現状のまま」で配布されます。 ライセンスに基づく許可と制限を管理する特定の言語については、ライセンスを参照してください。
 >
->このドキュメントは、国防副次官補 (Readiness) の Advanced Distributed Learning (ADL) イニシアチブを支援しているExperience API Working Group のメンバー ([CONTRIBUTING.md](CONTRIBUTING.md#contributors) のリストを参照) によって作成されました。
->
->フィードバックやお問い合わせはすべて helpdesk@adlnet.gov までお送りください。
+>このドキュメントは、国防副次官補室 (人事・即応担当) の Advanced Distributed Learning (ADL) イニシアチブを支援しているExperience API Working Group のメンバー ([CONTRIBUTING.md](CONTRIBUTING.md#contributors) のリストを参照) によって作成されました。フィードバックやお問い合わせはすべて helpdesk@adlnet.gov までお送りください。
 
 <details>
 <summary>en</summary>
