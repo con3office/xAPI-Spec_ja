@@ -87,3 +87,16 @@ The xAPI Conformance Testing Working Group meets the second Wednesdays of each m
 <summary>en</summary>
 Please refer to the [Contribution guidelines](CONTRIBUTING.md) for further direction and a list of contributors.
 </details>
+
+## 日本語翻訳作業について
+
+このGithubリポジトリは、xAPI仕様書の学習用翻訳版です。
+林向達 Kotatsu Rin （徳島文理大学）がフォークして主に作業をしています。
+原文と比較できるように対訳構成としています。
+
+xAPI仕様書の日本語翻訳は，
+仕様書1.02を日本eラーニングコンソシアムとモバイルラーニングコンソシアムの共同プロジェクトが作業したものがGitHubリポジトリ[elc-gh/xAPI-Spec_ja](https://github.com/elc-gh/xAPI-Spec_ja)として残っています。
+オリジナルのバージョンは1.03で，文書構成に見直しが行なわれたようですが、これを日本語翻訳した公開リソースは見当たりません。
+
+そこで，1.03を対象として日本語翻訳作業を始めることとしました。
+翻訳作業は機械翻訳を利用しながら，少しずつ見直しながらすすめています。
