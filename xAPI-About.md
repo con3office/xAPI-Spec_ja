@@ -146,8 +146,7 @@ Out of this perceived need, the xAPI community and specification were born. xAPI
 
 The goals of the xAPI are:
 
-* To make it easier to understand and compare learning experiences and their outcomes recorded across a wide 
-variety of contexts, platforms and technologies.
+* To make it easier to understand and compare learning experiences and their outcomes recorded across a wide variety of contexts, platforms and technologies.
 * To maximize interoperability of services which create, gather, store and process information about learning experiences.
 * To provide a guide to those who want to build applications that conform to and implement this specification.
 * To provide criteria against which conformance to this specification can be tested.
@@ -208,7 +207,7 @@ The use of an asterisk* following SHOULD indicates a very strong recommendation.
 
 実装を説明するために、仕様全体と付録に例を示します。これらの内容は、仕様の要件を説明するための架空のものであり、例で使用される特定の学習経験を追跡するためのベストプラクティス・アプローチを常に説明しているとは限りません。例は、要件の解釈を伝えるためには使用できますが、要件よりも優先されることは意図していません。
 
-仕様書に実装の特定局面に関する要件が含まれていない場合、その詳細は、この仕様書の範囲外であると考えられます。賢明なアプローチを決定するのは実装者次第となります。この仕様は曖昧さを避けるように努めており、ある領域に要件がない場合でも、通常は論理的根拠を提供します。
+仕様に実装の各部分に関する要件が含まれていない場合、その詳細は、仕様書の範囲外であると考えられます。賢明なアプローチを決定するのは実装者次第となります。この仕様は曖昧さを避けるように努めており、ある領域に要件がない場合でも、通常は論理的根拠を提供します。
 
 <details>
 <summary>en</summary>
@@ -285,7 +284,7 @@ JSON allows for objects to have properties that contain empty objects. This is n
 
 <a name="def-activity"></a>
 
-__Activity__: 「I did this」の「this」を構成するオブジェクトのタイプ。アクターが相互作用したもの。動詞と意味のある組み合わせで追跡される指示、経験、パフォーマンスの単位となる。アクティビティの解釈は広範で、アクティビティは、椅子などの有形のオブジェクト (現実または仮想) であることが可能なことを意味します。ステートメント「アンナはケーキのレシピを試しました」であれば、レシピはxAPIステートメントの観点からアクティビティを構成します。アクティビティのその他の例として、本、e ラーニング コース、ハイキング、会議などがあります。
+__Activity__: 「I did this」の「this」を構成するオブジェクトのタイプ。アクターが相互作用したもの。動詞と意味のある組み合わせで記録される指示、経験、パフォーマンスの単位となる。アクティビティの解釈は広範で、Activityは、椅子などの有形のオブジェクト (現実または仮想) であることが可能なことを意味します。ステートメント「アンナはケーキのレシピを試しました」であれば、「レシピ」はxAPIステートメントの観点からActivityを構成します。Activityのその他の例として、「本」「e ラーニング コース」「ハイキング」「会議」などがあります。
 
 <details>
 <summary>en</summary>
@@ -295,21 +294,22 @@ __Activity__: A type of Object making up the "this" in "I did this"; it is somet
 
 <a name="def-activity-provider"></a>
 
+__Activity Provider (AP)__: 現在は、Learning Record Provider と呼ばれています。この変更によって、Activity自体が必ずしも常にソフトウェアの責任とは限らず、記録する部分だけ責任を負うことを区別します。
 
 <details>
 <summary>en</summary>
 
-__Activity Provider (AP)__: Now referred to as a Learning Record Provider. This change differentiates that 
-the activity itself is not always the responsibility of software, rather just the tracking portion is. 
+__Activity Provider (AP)__: Now referred to as a Learning Record Provider. This change differentiates that the activity itself is not always the responsibility of software, rather just the tracking portion is. 
 </details>
 
 <a name="def-actor"></a>
 
+__Actor__: Activityに対して実行するアクションのステートメントを使って記録される個人またはグループの表現。「I did this」の「I」に相当します。
+
 <details>
 <summary>en</summary>
 
-__Actor__: An individual or group representation tracked using Statements performing an action within 
-an Activity.  Is the "I" in "I did this".
+__Actor__: An individual or group representation tracked using Statements performing an action within an Activity.  Is the "I" in "I did this".
 </details>
 
 <a name="def-api"></a>
@@ -317,8 +317,7 @@ an Activity.  Is the "I" in "I did this".
 <details>
 <summary>en</summary>
 
-__Application Programming Interface (API)__: A set of rules and standards created to allow access into 
-a software application or tool.  
+__Application Programming Interface (API)__: A set of rules and standards created to allow access into a software application or tool.  
 </details>
 
 <a name="def-authentication"></a>
@@ -326,8 +325,7 @@ a software application or tool.
 <details>
 <summary>en</summary>
 
-__Authentication__: The concept of verifying identity. Authentication allows interactions between two 
-"trusted" parties.
+__Authentication__: The concept of verifying identity. Authentication allows interactions between two "trusted" parties.
 </details>
 
 <a name="def-authorization"></a>
@@ -335,8 +333,7 @@ __Authentication__: The concept of verifying identity. Authentication allows int
 <details>
 <summary>en</summary>
 
-__Authorization__: The affordance of permissions based on role; the process of making one party 
-"trusted" by another.
+__Authorization__: The affordance of permissions based on role; the process of making one party "trusted" by another.
 </details>
 
 <a name="def-client"></a>
