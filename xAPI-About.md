@@ -294,7 +294,7 @@ __Activity__: A type of Object making up the "this" in "I did this"; it is somet
 
 <a name="def-activity-provider"></a>
 
-__Activity Provider (AP)__: 現在は、Learning Record Provider と呼ばれています。この変更によって、Activity自体が必ずしも常にソフトウェアの責任とは限らず、記録する部分だけ責任を負うことを区別します。
+__Activity Provider (AP)__: 現在は、Learning Record Provider と呼ばれている。この変更によって、Activity自体が必ずしも常にソフトウェアの責任とは限らず、記録する部分だけ責任を負うことを区別します。
 
 <details>
 <summary>en</summary>
@@ -304,7 +304,7 @@ __Activity Provider (AP)__: Now referred to as a Learning Record Provider. This 
 
 <a name="def-actor"></a>
 
-__Actor__: Activityに対して実行するアクションのステートメントを使って記録される個人またはグループの表現。「I did this」の「I」に相当します。
+__Actor__: Activityに対して実行するアクションのステートメントを使って記録される個人またはグループの表現。「I did this」の「I」に相当する。
 
 <details>
 <summary>en</summary>
@@ -324,6 +324,8 @@ __Application Programming Interface (API)__: A set of rules and standards create
 
 <a name="def-authentication"></a>
 
+__Authentication__: 本人確認の概念。 認証により、2つの「信頼できる」当事者間でのやりとりが可能になる。
+
 <details>
 <summary>en</summary>
 
@@ -332,6 +334,8 @@ __Authentication__: The concept of verifying identity. Authentication allows int
 
 <a name="def-authorization"></a>
 
+__Authorization__: 役割に基づく権限のアフォーダンス。ある当事者が別の当事者から「信頼」されるプロセスのこと。
+
 <details>
 <summary>en</summary>
 
@@ -339,6 +343,8 @@ __Authorization__: The affordance of permissions based on role; the process of m
 </details>
 
 <a name="def-client"></a>
+
+__Client__: リクエストを通じてやりとりする可能性のあるエンティティを指す。 例として、学習レコードプロバイダー、学習レコードコンシューマー、学習レコードストア (LRS)、学習管理システム (LMS) などがあります。
 
 <details>
 <summary>en</summary>
