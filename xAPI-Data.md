@@ -1,23 +1,34 @@
+<details>
+<summary>en</summary>
+</details>
+
 # Experience API
 ## Advanced Distributed Learning (ADL) Co-Laboratories
 
->#### License
 
->"Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
+>#### ライセンス
+>
+>Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defence Apache ライセンス、バージョン 2.0 (「ライセンス」) に基づいてライセンス供与されています。 ライセンスに準拠する場合を除き、このファイルを使用することはできません。 ライセンスのコピーは、http://www.apache.org/licenses/LICENSE-2.0 で入手できます。
+>
+>適用される法律で義務付けられている場合、または書面で合意されている場合を除き、ライセンスに基づいて配布されるソフトウェアは、明示または黙示を問わず、いかなる種類の保証または条件もなく、「現状のまま」で配布されます。 ライセンスに基づく許可と制限を管理する特定の言語については、ライセンスを参照してください。
+>
+>このドキュメントは、国防副次官補 (Readiness) の Advanced Distributed Learning (ADL) イニシアチブを支援しているExperience API Working Group のメンバー ([CONTRIBUTING.md](CONTRIBUTING.md#contributors) のリストを参照) によって作成されました。
+>
+>フィードバックやお問い合わせはすべて helpdesk@adlnet.gov までお送りください。
 
->Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except 
->in compliance with the License. You may obtain a copy of the License at
->http://www.apache.org/licenses/LICENSE-2.0
+<details>
+<summary>en</summary>
 
->Unless required by applicable law or agreed to in writing, software distributed under the License 
->is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express 
->or implied. See the License for the specific language governing permissions and limitations under 
->the License."
+#### License
 
->This document was authored by members of the Experience API Working Group (see 
->list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of 
->Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Please 
->send all feedback and inquiries to helpdesk@adlnet.gov  
+"Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
+
+Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+
+This document was authored by members of the Experience API Working Group (see list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Please send all feedback and inquiries to helpdesk@adlnet.gov  
+</details>
 
 ## Table of Contents
 *	Part One:	[About the Experience API](./xAPI-About.md#partone)  
@@ -103,37 +114,59 @@
 
 
 <a name="parttwo"></a>
+
 # Part Two: Experience API Data
 
 <a name="documents"></a>
+
 ## <a name="1.0">1.0</a> Documents
+
+
+<details>
+<summary>en</summary>
 
 The Experience API provides a facility for Learning Record Providers to save arbitrary data in the form of documents.  This data 
 is largely unstructured, which allows for flexibility.  Specifics on document behaviors can be found in [Part 3](./xAPI-Communication.md#doctransfer) 
+</details>
 
 <a name="statements"></a> 
 
 ## <a name="2.0">2.0</a> Statements  
 
 <a name="statement-purpose"></a> 
+
 ### <a name="2.1">2.1</a> Purpose
+
+
+<details>
+<summary>en</summary>
 
 Statements are the evidence for any sort of experience or event which is to be tracked in xAPI. 
 While Statements follow a machine readable JSON format, they can also easily be described
 using natural language. This can be extremely useful for the design process. Statements are 
 meant to be aggregated and analyzed to provide larger meaning for the overall experience than 
 just the sum of its parts.
+</details>
 
 <a name="dataconstraints"></a>
 ### <a name="2.2">2.2</a> Formatting Requirements
 
 ###### <a name="2.2.s1"></a>Details
 
+
+<details>
+<summary>en</summary>
+
 All of the properties used in Statements are restricted to certain data types. For clarity, key requirements are 
 documented here, emphasizing where xAPI components have a responsibility to act in certain ways to be considered 
 conformant to this specification.
+</details>
 
 ###### <a name="2.2.s2"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.2.s2.b1"></a>Statements and other objects SHOULD NOT include properties with a value of an empty object. 
 * <a name="2.2.s2.b2"></a>A Statement MUST use each property no more than one time.
@@ -141,8 +174,13 @@ conformant to this specification.
 * <a name="2.2.s2.b4"></a>A Statement MAY use its properties in any order.
 * <a name="2.2.s2.b5"></a>The LRS MUST NOT return a different serialization of any properties except those 
 [listed as exceptions](#statement-immutability-and-exceptions).
+</details>
 
 ###### <a name="2.2.s3"></a>Learning Record Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 The following requirements reiterate especially important requirements already included elsewhere, to emphasize,
 clarify, and provide implementation guidance.  Some types of validation, such as complete IRI validation and validation 
@@ -162,8 +200,13 @@ functionality of whichever code languages they use.
 
 __Note:__ The LRS is recommended to reject Statements containing additional properties. Additional properties in 
 Statements would mean that the Statement would not be interoperable with all LRSs. 
+</details>
 
 ###### <a name="2.2.s4"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.2.s4.b1"></a>The LRS MUST reject Statements
     * <a name="2.2.s4.b1.b1"></a>with any null values (except inside extensions).
@@ -190,10 +233,16 @@ non-format-following rejection requirement.
 non-format-following rejection requirement.
 * <a name="2.2.s4.b8"></a>Additional properties SHOULD* NOT be added to Statements and other objects unless explicitly 
 allowed by this specification and the LRS SHOULD* reject Statements containing such additional properties.
+</details>
+
 
 <a name="lifecycle"></a>
 
 ### <a name="2.3">2.3</a> Statement Lifecycle
+
+
+<details>
+<summary>en</summary>
 
 Statements are information about a tracked learning experience. Typically, the information represented in the 
 Statement has already happened. Thus, the natural language used in "display" or in the human-readable portion of 
@@ -201,10 +250,14 @@ the Verb id will usually use the past tense.
 
 Statements are expected to be permanent. The only way to undo a Statement within this specification is to 
 [void it](#voided). Voiding does not destroy a Statement, rather indicates the evidence in the Statement is to be disregarded.
+</details>
 
 <a name="statement-immutability-and-exceptions"></a>
-
 #### <a name="2.3.1">2.3.1</a> Statement Immutability
+
+
+<details>
+<summary>en</summary>
 
 Statements are immutable (they cannot be changed). The following are exceptions or areas not covered by this rule:
 
@@ -240,9 +293,15 @@ The following explicitly are **not** exceptions and **are** covered by this rule
 "timestamp" property as representing either the start, middle or end of the experience, it is not possible for 
 an LRS to accurately deserialize the Result Duration and convert between units of time. For this reason, the 
 Result Duration is considered a string for purposes of Statement comparison. 
+</details>
 
 <a name="statement-comparison-requirements"></a>
 ###### <a name="2.3.1.s9"></a>Statement Comparision Requirements
+
+
+<details>
+<summary>en</summary>
+
 There are a number of scenarios outlined in this specification which require Statements to be
 compared to see if they match. In these scenarios, the following rules apply:
 
@@ -250,12 +309,18 @@ compared to see if they match. In these scenarios, the following rules apply:
 [exceptions to Statement immutability](#statement-immutability-and-exceptions) MUST be ignored.
 * <a name="2.3.1.s9.b2"></a>Differences relating to a different serialization of any properties not
 [listed as exceptions](#statement-immutability-and-exceptions) MUST not be ignored. 
+</details>
+
 
 <a name="voided"></a>
 
 #### <a name="2.3.2">2.3.2</a> Voiding
 
 ###### <a name="2.3.2.s1"></a>Rationale
+
+
+<details>
+<summary>en</summary>
 
 The certainty that an LRS has an accurate and complete collection of data is guaranteed by the fact that Statements 
 cannot be logically changed or deleted. This immutability of Statements is a key factor in enabling the distributed 
@@ -265,8 +330,13 @@ However, not all Statements are perpetually valid once they have been issued. Mi
 that a previously made Statement is marked as invalid. This is called "voiding a Statement" and the reserved 
 Verb `http://adlnet.gov/expapi/verbs/voided` is used for this purpose. Any Statement that voids another
 cannot itself be voided.
+</details>
 
 ###### <a name="2.3.2.s2"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.3.2.s2.b1"></a>When issuing a Statement that voids another, the Object of that voiding Statement MUST have 
 the "objectType" property set to `StatementRef`.
@@ -286,8 +356,13 @@ that Statement again under a new id.
 __Note:__ See ["Statement References"](#stmtref) in [When the "Object" is a Statement](#stmtasobj) 
 for details about making references to other Statements.  To see how voided statements behave when queried, 
 See [StatementRef](./xAPI-Communication.md#queryStatementRef) in Part 3).
+</details>
 
 ###### <a name="2.3.2.s3"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 This example Statement voids a previous Statement which it identifies with the Statement id "e05aa883-acaf-40ad-bf54-02c8ce485fb0".
 
@@ -310,10 +385,19 @@ This example Statement voids a previous Statement which it identifies with the S
 	}
 }
 ```  
+</details>
+
+
 <a name="statement-properties"></a> 
+
 ### <a name="2.4">2.4</a> Statement Properties  
 
 ###### <a name="2.4.s1"></a>Details
+
+
+<details>
+<summary>en</summary>
+
 The details of each property of a Statement are described in the table below.  
 
 <table>
@@ -359,8 +443,13 @@ The details of each property of a Statement are described in the table below.
 	    <td>Headers for Attachments to the Statement</td>
 	<td>Optional</td></tr>
 </table>
+</details>
 
 ###### <a name="2.4.s2"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 An example of the simplest possible Statement using all properties that MUST or SHOULD be used.
 It is recommended to also populate optional properties where relevant. 
@@ -383,6 +472,8 @@ When this Statement is returned from the LRS it will include some additional pro
 }
 ```  
 See [Appendix A: Example Statements](#Appendix2A) for more examples. 
+</details>
+
 
 <a name="stmtid"></a> 
 
@@ -390,28 +481,50 @@ See [Appendix A: Example Statements](#Appendix2A) for more examples.
 
 ###### <a name="2.4.1.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 A UUID (all versions of variant 2 in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) are valid, and the UUID MUST 
 be in standard string form).
+</details>
 
 ###### <a name="2.4.1.s2"></a>Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.1.s2.b1"></a>Statement ids MUST be generated by the LRS if a Statement is received without an id.
 * <a name="2.4.1.s2.b2"></a>Statement ids SHOULD be generated by the Learning Record Provider.
+</details>
+
 
 <a name="actor"></a>
-
 #### <a name="2.4.2">2.4.2</a> Actor  
 
 ###### <a name="2.4.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 The Actor defines who performed the action. The Actor of a Statement can be an Agent or a Group. 
+</details>
+
 
 <a name="agent"></a>
 
 ##### <a name="2.4.2.1">2.4.2.1</a> When the Actor objectType is Agent
+
 ###### <a name="2.4.2.1.s1"></a>Description
 An Agent (an individual) is a persona or system.
 
 ###### <a name="2.4.2.1.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.2.1.s2.b1"></a>An Agent MUST be identified by one (1) of the four types of Inverse Functional Identifiers (see
  [2.4.2.3 Inverse Functional Identifier](#inversefunctional));
@@ -430,17 +543,28 @@ The table below lists the properties of Agent Objects.
 	    <td>An Inverse Functional Identifier unique to the Agent.</td>
 	    <td>Required</td></tr>
 </table>
+</details>
 
 
 <a name="group"></a>
 
 ##### <a name="2.4.2.2">2.4.2.2</a> When the Actor ObjectType is Group
+
 ###### <a name="2.4.2.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
 
 A Group represents a collection of Agents and can be used in most of the same situations an Agent 
 can be used.  There are two types of Groups: Anonymous Groups and Identified Groups.
+</details>
 
 ###### <a name="2.4.2.2.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 An Anonymous Group is used to describe a cluster of people where there is no ready identifier for 
 this cluster, e.g. an ad hoc team.
@@ -470,8 +594,13 @@ The table below lists all properties of an Identified Group.
 	<tr id="2.4.2.2.s2.table2.row4"><td colspan="2">see <a href="#inversefunctional"> 2.4.2.3 Inverse Functional Identifier</a></td>
 	    <td>An Inverse Functional Identifier unique to the Group.</td><td>Required</td></tr>	
 </table>
+</details>
 
 ###### <a name="2.4.2.2.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.2.2.s3.b1"></a>A Learning Record Consumer MUST consider each Anonymous Group distinct even if it has an 
 identical set of members.
@@ -480,33 +609,61 @@ Statements, aggregate data or store and retrieve documents relating to a group.
 * <a name="2.4.2.2.s3.b3"></a>A Learning Record Provider MAY include a complete or partial list of Agents in the "member" 
 property of a given Anonymous or Identified Group.
 * <a name="2.4.2.2.s3.b4"></a>An LRS returning a Statement MAY return the list of Group members in any order.
+</details>
 
 ###### <a name="2.4.2.2.s4"></a>Requirements for Anonymous Groups
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.2.2.s4.b1"></a>An Anonymous Group MUST include a "member" property listing constituent Agents.
 * <a name="2.4.2.2.s4.b2"></a>An Anonymous Group MUST NOT contain Group Objects in the "member" identifiers.
+</details>
 
 ###### <a name="2.4.2.2.s5"></a>Requirements for Identified Groups
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.2.2.s5.b1"></a>An Identified Group MUST include exactly one (1) Inverse Functional Identifier.
 * <a name="2.4.2.2.s5.b2"></a>An Identified Group MUST NOT contain Group Objects in the "member" property.
 * <a name="2.4.2.2.s5.b3"></a>An Identified Group SHOULD NOT use Inverse Functional Identifiers that are also used 
 as Agent identifiers.
 * <a name="2.4.2.2.s5.b4"></a>An Identified Group MAY include a "member" property listing constituent Agents.
+</details>
+
 
 <a name="inversefunctional">
 
 ##### <a name="2.4.2.3">2.4.2.3</a> Inverse Functional Identifier
+
 ###### <a name="2.4.2.3.s1"></a>Description
+
+<details>
+<summary>en</summary>
+
 An Inverse Functional Identifier (IFI) is a value of an Agent or Identified
 Group that is guaranteed to only ever refer to that Agent or Identified Group.
+</details>
 
 ###### <a name="2.4.2.3.s2"></a>Rationale
+
+
+<details>
+<summary>en</summary>
+
 Agents and Groups need to be uniquely identifiable in order for data to be stored and retrieved against them. 
 In an xAPI Statement this is accomplished using Inverse Functional Identifiers which are loosely inspired 
 by the widely accepted FOAF principle (see: [Friend Of A Friend](http://xmlns.com/foaf/spec/#term_Agent)).
+</details>
 
 ###### <a name="2.4.2.3.s3"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The table below lists all possible Inverse Functional Identifier properties.
 
@@ -519,10 +676,18 @@ but no others, SHOULD be used for this property and mbox_sha1sum.</td></tr>
 	<tr id="2.4.2.3.s3.table1.row3"><td>openid</td><td>URI</td><td>An openID that uniquely identifies the Agent.</td></tr>
 	<tr id="2.4.2.3.s3.table1.row4"><td>account</td><td><a href="#agentaccount">Object</a></td><td>A user account on an existing system e.g. an LMS or intranet.</td></tr>	
 </table>
+</details>
 
 ###### <a name="2.4.2.3.s4"></a>Client Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.2.3.s4.b1"></a>The domain portions of email addresses are case insensitive. Clients SHOULD use lowercase 
 for the domain portion of the email address when calculating the SHA1 hash for the "mbox_sha1sum" property. 
+</details>
+
 
 <a name="agentaccount"></a>
 
@@ -534,6 +699,10 @@ A user account on an existing system, such as a private system (LMS or intranet)
 system (social networking site).
 
 ###### <a name="2.4.2.4.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.2.4.s2.b1"></a>If the system that provides the account Object uses OpenID, the Learning Record Provider
 SHOULD use the openid property instead of an account Object.
@@ -549,9 +718,14 @@ The table below lists all properties of Account Objects.
 	<td>Required</td></tr>
 	<tr id="2.4.2.4.s2.table1.row2"><td>name</td><td>String</td><td>The unique id or name used to log in to this account. This is based on FOAF's accountName.</td><td>Required</td></tr>
 </table>
+</details>
 
 
 ###### <a name="2.4.2.4.s3"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 This example shows an Agent identified by an opaque account:
 
@@ -564,6 +738,8 @@ This example shows an Agent identified by an opaque account:
 	}
 }
 ``` 
+</details>
+
 
 <a name="verb"></a>
 
@@ -575,14 +751,23 @@ The Verb defines the action between an Actor and an Activity.
 
 ###### <a name="2.4.3.s2"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 The Verb in an xAPI Statement describes the action performed during the learning experience. The 
 xAPI does not specify any particular Verbs. (With one exception, namely the reserved 
 Verb [http://adlnet.gov/expapi/verbs/voided](#voided)). Instead, it defines how to create Verbs so that 
 communities of practice can establish Verbs meaningful to their members and make them available 
 for use by anyone. A predefined list of Verbs would be limited by definition and might not be able to 
 effectively capture all possible future learning experiences. 
+</details>
 
 ###### <a name="2.4.3.s3"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Verbs appear in Statements as Objects consisting of an IRI and a set of display names 
 corresponding to multiple languages or dialects which provide human-readable meanings of the Verb. 
@@ -608,21 +793,36 @@ The table below lists all properties of the Verb Object.
 		<td>Recommended</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.4.3.s4"></a>Verb Id Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.3.s4.b1"></a>A system reading a Statement MUST use the Verb IRI to infer meaning.
 * <a name="2.4.3.s4.b2"></a>The IRI contained in an id SHOULD contain a human-readable portion which SHOULD provide meaning enough 
 for a person reviewing the raw statement to disambiguate the Verb from other similar (in syntax) Verbs.
 * <a name="2.4.3.s4.b3"></a>A single Verb IRI MUST NOT be used to refer to multiple meanings.
+</details>
 
 ###### <a name="2.4.3.s5"></a>Verb Display Learning Record Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.3.s5.b1"></a>The "display" property SHOULD be used by all Statements.
 * <a name="2.4.3.s5.b2"></a>The "display" property MUST be used to illustrate the meaning which is already determined 
 by the Verb IRI.
+</details>
 
 ###### <a name="2.4.3.s6"></a>Verb Display LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 The requirements below relate to the "display" property as returned by the LRS via the API.  
 
@@ -634,8 +834,13 @@ canonical Display for that Verb.
 * <a name="2.4.3.s6.b4"></a>The LRS may determine its canonical Display based on the Verb's "display" property included within 
 Statements it receives, the "name" property included in the metadata as described in 
 [3.2 Hosted Metadata](#miscmeta), or the Verb's Display as defined in some other location.
+</details>
 
 ###### <a name="2.4.3.s7"></a>Verb Display Learning Record Consumer Requirements
+
+
+<details>
+<summary>en</summary>
 
 The requirements below relate to the display property as displayed to a user by a Learning Record Consumer. 
 
@@ -649,8 +854,14 @@ the Verb's "display" property included within the Statement, the "name" property
 [3.2 Hosted Metadata](#miscmeta), or the Verb's Display as defined in some other location.
 * <a name="2.4.3.s7.b5"></a>Learning Record Consumers displaying a Statement's Verb MUST NOT display a word that differs 
 from the meaning of the Verb but MAY alter the wording and tense displayed for the purposes of human-readability. 
+</details>
 
 ###### <a name="2.4.3.s8"></a>Example
+
+
+<details>
+<summary>en</summary>
+
 This example shows a Verb with the recommended properties set and using US English and Spanish languages. 
 ```
 {
@@ -665,10 +876,15 @@ This example shows a Verb with the recommended properties set and using US Engli
 The Verb in the example above is included for illustrative purposes only. This is not intended to imply that
 a Verb with this meaning has been defined with this id. This applies to all example verbs given in this 
 specification document, with the exception of the reserved Verb [http://adlnet.gov/expapi/verbs/voided](#voided)).
+</details>
 			
 ##### <a name="2.4.3.1">2.4.3.1</a> Use in Language and Semantics of Verbs
 
 ###### <a name="2.4.3.1.s1"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 _Semantics_
 
@@ -688,12 +904,18 @@ A Verb in the Experience API is an IRI, and denotes a specific meaning not tied 
 
 For example, a particular Verb IRI such as http://example.org/firearms#fire might denote the action of firing a gun, 
 or the Verb IRI http://example.com/فعل/خواندن might denote the action of reading a book. 
+</details>
+
 
 <a name="object"></a>
 
 #### <a name="2.4.4">2.4.4</a> Object
 
 ###### <a name="2.4.4.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
 
 The Object defines the thing that was acted on. The Object of a Statement can be an Activity, Agent/Group, 
 SubStatement, or Statement Reference.
@@ -706,18 +928,29 @@ Some examples:
 
 * <a name="2.4.4.s1.b3"></a>The Object is a SubStatement or Statement Reference (different implementations, but similar 
 when human-read): "Nellie commented on 'Jeff wrote an essay about hiking.'"
+</details>
 
 ###### <a name="2.4.4.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Objects which are provided as a value for this property SHOULD include an "objectType" property. If not specified, the 
 objectType is assumed to be `Activity`. Other valid values are: `Agent`, `Group`, `SubStatement` or `StatementRef`.
 The properties of an Object change according to the objectType.
+</details>
+
 
 <a name="activity"></a>
 
 ##### <a name="2.4.4.1">2.4.4.1</a> When the ObjectType is Activity
 
 ###### <a name="2.4.4.1.s1"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 A Statement can represent an Activity as the Object of the Statement. The following table lists the Object 
 properties in this case.
@@ -747,9 +980,15 @@ If it were possible to use the same id for two different Activities, the validit
 these Activities could be questioned. This means an LRS can't ever treat (references to) the same 
 Activity id as belonging to two different Activities, even if it thinks this was intended. Namely, 
 when a conflict with another system occurs, it’s not possible to determine which Activity is intended. 
+</details>
 
 
 ###### <a name="2.4.4.1.s2"></a><a name="actdef"></a>Activity Definition
+
+
+<details>
+<summary>en</summary>
+
 The table below lists the properties of the Activity Definition Object:
 
 <table>
@@ -794,9 +1033,14 @@ The table below lists the properties of the Activity Definition Object:
 
 __Note:__ IRI fragments (sometimes called relative IRLs) are not valid IRIs. As with Verbs, it is recommended that
 those implementing xAPI look for and use established, widely adopted, Activity types.
+</details>
 
 
 ###### <a name="2.4.4.1.s3"></a><a name="acturi"></a>Activity id Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.4.1.s3.b1"></a>An Activity id MUST be unique.
 * <a name="2.4.4.1.s3.b2"></a>An Activity id MUST always reference the same Activity.
@@ -804,8 +1048,13 @@ those implementing xAPI look for and use established, widely adopted, Activity t
 * <a name="2.4.4.1.s3.b4"></a>An Activity id SHOULD be created according to a scheme that makes sure all Activity ids within 
 that domain remain unique.
 * <a name="2.4.4.1.s3.b5"></a>An Activity id MAY point to metadata or the IRL for the Activity.
+</details>
 
 ###### <a name="2.4.4.1.s4"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.4.1.s4.b1"></a>An LRS MUST NOT take action in the event it perceives an Activity id is being used by multiple 
 authors and/or organizations.
@@ -817,8 +1066,13 @@ SHOULD update the stored Activity Definition accordingly if that decision is pos
 a new definition e.g. to fix a spelling.
 * <a name="2.4.4.1.s4.b5"></a>An LRS SHOULD NOT make significant changes to its canonical definition for the Activity 
 based on an updated definition e.g. changes to correct responses.
+</details>
 
 ###### <a name="2.4.4.1.s5"></a>Learning Record Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.4.1.s5.b1"></a>A Learning Record Provider MUST ensure that Activity ids are not used across multiple Activities.
 * <a name="2.4.4.1.s5.b2"></a>A Learning Record Provider MUST only generate states or Statements against a certain Activity id 
@@ -827,10 +1081,15 @@ that are compatible and consistent with states or Statements previously stored a
 of the Activity to break compatibility.	
 
 <a name="interactionacts"></a>
+</details>
 
 ##### <a name="2.4.4.1.s6"></a>Interaction Activities
 
 ###### <a name="2.4.4.1.s7"></a>Rationale
+
+
+<details>
+<summary>en</summary>
 
 Traditional e-learning has included structures for interactions or assessments. As a way to allow these practices and
 structures to extend Experience API's utility, this specification includes built-in definitions for interactions, which
@@ -840,8 +1099,13 @@ associated requirements included directly in this document.
 
 These interaction definitions are simple to use, and consequently limited. It is expected that Communities of Practice
 requiring richer interactions definitions will do so through the use of Activity types and Activity Definition Extensions. 
+</details>
 
 ###### <a name="2.4.4.1.s8"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The table below lists the properties for Interaction Activities.
 
@@ -868,8 +1132,13 @@ The table below lists the properties for Interaction Activities.
 		<td>Optional</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.4.4.1.s9"></a>Interaction Types
+
+
+<details>
+<summary>en</summary>
 
 The table below describes the kinds of interactions represented by each of the interactionTypes. These types of interactions 
 were originally based on the types of interactions allowed for "cmi.interactions.n.type" in the SCORM 2004 4th 
@@ -926,8 +1195,14 @@ Edition Run-Time Environment. See [Appendix C](#Appendix2C) for examples definit
 		<td>Another type of interaction that does not fit into those defined above.</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.4.4.1.s10"></a>Response Patterns
+
+
+<details>
+<summary>en</summary>
+
 The table below outlines the format of the strings within "correctResponsesPattern" property for each interaction type. 
 This format is also used to represent the learner's response within the Result Object. These formats were originally based on the 
 requirements relating to "cmi.interactions.n.correct_responses.n.pattern" as defined in the SCORM 2004 4th Edition 
@@ -984,8 +1259,13 @@ Run-Time Environment. See [Appendix C](#Appendix2C) for examples of each format.
 		<td>Any format is valid within this string as appropriate for the type of interaction.</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.4.4.1.s11"></a>Correct Responses Pattern
+
+
+<details>
+<summary>en</summary>
 
 The Correct Responses Pattern contains an array of response patterns. A learner's response will be considered correct if it 
 matches **any** of the response patterns in that array. Where a response pattern is a delimited list, the learner's response 
@@ -1013,8 +1293,13 @@ exceptional circumstances.
 Where the Correct Responses Pattern contains an empty array, the meaning of this is that there is no correct
 answer; all answers are incorrect. Where any answer is correct (e.g. in a survey), the Correct Responses Pattern property
 is omitted. 
+</details>
 
 ###### <a name="2.4.4.1.s12"></a>Characterstring parameters
+
+
+<details>
+<summary>en</summary>
 
 Some of the values within the responses described above can be prepended with certain additional parameters. These were 
 originally based on the characterstring delimiters defined in the SCORM 2004 4th Edition Run-Time Environment. These 
@@ -1052,9 +1337,14 @@ The following parameters are valid at the start of each item in the list for the
 		<td>fill-in, long-fill-in, performance (String responses only)</td>
 	</tr>
 </table>
+</details>
 
 
 ###### <a name="2.4.4.1.s13"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.4.1.s13.b1"></a>Interaction Activities MUST have a valid interactionType.
 * <a name="2.4.4.1.s13.b2"></a>Interaction Activities SHOULD have the Activity type 
@@ -1064,11 +1354,16 @@ specified for Interaction Activities and MAY return `400 Bad Request` if the rem
 Interaction Activity.
 * <a name="2.4.4.1.s13.b4"></a>The LRS SHOULD* NOT enforce character limits relating to response patterns. 
 * <a name="2.4.4.1.s13.b5"></a>The LRS SHOULD* NOT limit the length of the correctResponsesPattern array for any interactionType. 
+</details>
 
 
 ##### <a name="2.4.4.1.s14"></a>Interaction Components
 
 ###### <a name="2.4.4.1.s15"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Interaction components are defined as follows:  
 
@@ -1106,16 +1401,28 @@ shows the supported interaction component list(s) for an Interaction Activity wi
 	<td>A list of the elements making up the performance interaction.</td></tr>
 	<tr id="2.4.4.1.s15.table2.row5"><td>true-false, fill-in, long-fill-in, numeric, other</td><td>[No component lists supported]</td><td></td></tr>
 </table>
+</details>
 
 
 ###### <a name="2.4.4.1.s16"></a>Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.4.1.s16.b1"></a>Within an array of interaction components, all id values MUST be distinct.
 * <a name="2.4.4.1.s16.b2"></a>An interaction component's id value SHOULD NOT have whitespace.
+</details>
 
 ###### <a name="2.4.4.1.s17"></a>Examples
 
+
+<details>
+<summary>en</summary>
+
 See [Appendix C](#Appendix2C) for examples of Activity Definitions for each of the cmi.interaction types.
+</details>
+
 
 <a name="agentasobj"></a>
 
@@ -1123,9 +1430,14 @@ See [Appendix C](#Appendix2C) for examples of Activity Definitions for each of t
 
 ###### <a name="2.4.4.2.s1"></a>Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.4.2.s1.b1"></a>Statements that specify an Agent or Group as an Object MUST specify an "objectType" property. 
 
 See [Actor](#actor) for details regarding Agents.  
+</details>
 
 <a name="stmtasobj"></a>
 
@@ -1133,11 +1445,17 @@ See [Actor](#actor) for details regarding Agents.
 
 ###### <a name="2.4.4.3.s1"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 There are two possibilities for using a Statement as an Object. First, an Object can take on the form 
 of a Statement that already exists by using a Statement Reference. A common use case for 
 Statement References is grading or commenting on an experience that could be tracked as an 
 independent event. The special case of voiding a Statement would also use a Statement Reference.
 Second, an Object can be a brand new Statement by using a SubStatement. Each type is defined below.
+</details>
+
 
 <a name="stmtref"></a>
 
@@ -1147,6 +1465,10 @@ Second, an Object can be a brand new Statement by using a SubStatement. Each typ
 A Statement Reference is a pointer to another pre-existing Statement.
 
 ###### <a name="2.4.4.3.s4"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.4.3.s4.b1"></a>A Statement Reference MUST specify an "objectType" property with the value `StatementRef`.
 * <a name="2.4.4.3.s4.b2"></a>A Statement Reference MUST set the "id" property to the UUID of a Statement. There is no 
@@ -1160,8 +1482,13 @@ The table below lists all properties of a Statement Reference Object:
 	<tr id="2.4.4.3.s4.table1.row2"><td>id</td><td>UUID</td><td>The UUID of a Statement. 
 	</td><td>Required</td></tr>
 </table>
+</details>
 
 ###### <a name="2.4.4.3.s5"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 Assuming that some Statement has already been stored with the id `8f87ccde-bb56-4c2e-ab83-44982ef22df0`, the following example 
 shows how a comment could be issued on the original Statement, using a new Statement:  
@@ -1187,25 +1514,42 @@ shows how a comment could be issued on the original Statement, using a new State
 	}
 }
 ``` 
+</details>
+
 
 <a name="substmt"></a>
 
 ##### <a name="2.4.4.3.s6"></a>SubStatements
 
 ###### <a name="2.4.4.3.s7"></a>Description
+
+
+<details>
+<summary>en</summary>
+
 A SubStatement is like a StatementRef in that it is included as part of a containing Statement, but unlike a StatementRef, it 
 does not represent an event that has occurred. It can be used to describe, for example, a predication of a potential future 
 Statement or the behavior a teacher looked for when evaluating a student (without representing the student actually doing that 
 behavior). 
+</details>
 
 ###### <a name="2.4.4.3.s8"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.4.3.s8.b1"></a>A SubStatement MUST specify an "objectType" property with the value `SubStatement`.
 * <a name="2.4.4.3.s8.b2"></a>A SubStatement MUST be validated as a Statement in addition to other SubStatement requirements.
 * <a name="2.4.4.3.s8.b3"></a>A SubStatement MUST NOT have the "id", "stored", "version" or "authority" properties.
 * <a name="2.4.4.3.s8.b4"></a>A SubStatement MUST NOT contain a SubStatement of its own, i.e., cannot be nested.
+</details>
 
 ###### <a name="2.4.4.3.s9"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 One interesting use of SubStatements is in creating Statements of intention. For example, using SubStatements we can create 
 Statements of the form `"<I> <planned> (<I> <did> <this>)"` to indicate that we've planned to take some action. The concrete 
@@ -1249,6 +1593,8 @@ example that follows logically states that "I planned to visit 'Some Awesome Web
 	}
 }
 ```
+</details>
+
 
 <a name="result"></a>
 
@@ -1259,6 +1605,10 @@ example that follows logically states that "I planned to visit 'Some Awesome Web
 An optional property that represents a measured outcome related to the Statement in which it is included.
 
 ###### <a name="2.4.5.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The following table contains the properties of the Result Object.
 
@@ -1303,6 +1653,8 @@ The following table contains the properties of the Result Object.
 	<td>Optional</td>
 </tr>
 </table>
+</details>
+
 
 <a name="Score"></a>
 
@@ -1312,6 +1664,10 @@ The following table contains the properties of the Result Object.
 An optional property that represents the outcome of a graded Activity achieved by an Agent.
 
 ###### <a name="2.4.5.1.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The table below defines the Score Object. 
 
@@ -1349,12 +1705,19 @@ The properties of the Score Object are based on the corresponding properties of 
 4th Edition. The "scaled" and "raw" properties do not necessarily relate directly as scaling and normalization can
 be applied differently by Learning Record Providers within different Communities of Practice. Scaling and normalization 
 are outside the scope of this specification.
+</details>
 
 ###### <a name="2.4.5.1.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.5.1.s3.b1"></a>The Score Object SHOULD include "scaled" if a logical percent based score is known.
 * <a name="2.4.5.1.s3.b2"></a>The Score Object SHOULD NOT be used for scores relating to progress or completion. Consider 
 using an extension (preferably from an established Community of Practice) instead.
+</details>
+
 
 <a name="context"></a>
 
@@ -1364,11 +1727,21 @@ using an extension (preferably from an established Community of Practice) instea
 An optional property that provides a place to add contextual information to a Statement. All "context" properties are optional.
 
 ###### <a name="2.4.6.s2"></a>Rationale
+
+
+<details>
+<summary>en</summary>
+
 The "context" property provides a place to add some contextual information to a Statement. It can store information such 
 as the instructor for an experience, if this experience happened as part of a team-based Activity, or how an experience fits 
 into some broader activity.
+</details>
 
 ###### <a name="2.4.6.s3"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The following table contains the properties of the Context Object.
 
@@ -1435,8 +1808,13 @@ The following table contains the properties of the Context Object.
 </tr>
 
 </table>
+</details>
 
 ###### <a name="2.4.6.s4"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.6.s4.b1"></a>The "revision" property MUST only be used if the Statement's Object is an Activity.
 * <a name="2.4.6.s4.b2"></a>The "platform" property MUST only be used if the Statement's Object is an Activity.
@@ -1447,12 +1825,18 @@ or assets of an Activity. (Use a new Activity id instead).
 
 __Note:__ Revision has no behavioral implications within the scope of xAPI. It is simply stored
 so that it is available (e.g. for interpreting and displaying data).
+</details>
+
 
 <a name="Registration"></a>
 
 ##### <a name="2.4.6.1">2.4.6.1</a> Registration Property
 
 ###### <a name="2.4.6.1.s1"></a>Rationale/Details
+
+
+<details>
+<summary>en</summary>
 
 When an LRS is an integral part of an LMS, the LMS likely supports the concept of registration. 
 The Experience API applies the concept of registration more broadly. A registration could be 
@@ -1462,6 +1846,8 @@ completing an Activity ends a registration. Nor is a registration necessarily co
 The Registration is also used when storing documents within the State Resource, e.g. for 
 bookmarking. Normally the same registration is used for requests to both the Statement and 
 State Resources relating to the same learning experience so that all data recorded for the experience is consistent. 
+</details>
+
 
 <a name="contextActivities"></a>
 
@@ -1473,10 +1859,19 @@ A map of the types of learning activity context that this Statement is related t
 
 ###### <a name="2.4.6.2.s2"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 Many Statements do not just involve one (Object) Activity that is the focus, but relate to other contextually relevant 
 Activities. The "contextActivities" property allow for these related Activities to be represented in a structured manner.
+</details>
 
 ###### <a name="2.4.6.2.s3"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 There are four valid context types. All, any or none of these MAY be used in a given Statement:
 
@@ -1503,16 +1898,27 @@ __Note:__ The values in this section are not for expressing all the relationship
 are for expressing relationships appropriate for the specific Statement (though the nature of the Object will often be 
 important in determining that). For instance, it is appropriate in a Statement about a test to include the course the test 
 is part of as a "parent", but not to include every possible degree program the course could be part of in the grouping value.
+</details>
 
 ###### <a name="2.4.6.2.s4"></a>Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.6.2.s4.b1"></a>Every key in the contextActivities Object MUST be one of parent, grouping, category, or other.
 * <a name="2.4.6.2.s4.b2"></a>Every value in the contextActivities Object MUST be either a single Activity Object or an array of Activity Objects.
 * <a name="2.4.6.2.s4.b3"></a>The LRS MUST return every value in the contextActivities Object as an array, even if it arrived as a single Activity Object.
 * <a name="2.4.6.2.s4.b4"></a>The LRS MUST return single Activity Objects as an array of length one containing the same Activity.
 * <a name="2.4.6.2.s4.b5"></a>The Learning Record Provider SHOULD ensure that every value in the contextActivities Object is an array of Activity Objects 
 instead of a single Activity Object.
+</details>
 
 ###### <a name="2.4.6.2.s5"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 Consider the following hierarchical structure: "Questions 1 to 6"
 are part of "Test 1" which in turn belongs to the course "Algebra 1". 
@@ -1536,6 +1942,8 @@ useful when the Object of the Statement is an Agent, not an Activity.
     ]
 }
 ```
+</details>
+
 
 <a name="timestamp"></a>
 
@@ -1546,6 +1954,10 @@ useful when the Object of the Statement is an Agent, not an Activity.
 The time at which the experience occurred.
 
 ###### <a name="2.4.7.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The "timestamp" property is of type [Timestamp](#timestamps). It is formatted according to the normal format of ISO 8601 and 
 corresponds to the time of when the events described within this Statement occurred. If it is not included in the Statement 
@@ -1561,8 +1973,13 @@ timestamp for different experiences. For example, when recording the experience 
 be most appropriate to record the timestamp of the start of the experience; when recording the experience of 
 completing a qualification, it might be most appropriate to record the timestamp of the end of the experience.
 These examples are for illustrative purposes only and are not meant to be prescriptive.
+</details>
 
 ###### <a name="2.4.7.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.7.s3.b1"></a>For requirements pertaining to the Timestamp data type, see [Section 4.5 ISO 8601 Timestamps](#timestamps).
 * <a name="2.4.7.s3.b2"></a>The "timestamp" property SHOULD* be set by the LRS to the value of the ["stored" property](#stored) 
@@ -1573,40 +1990,70 @@ beginning or end.
 * <a name="2.4.7.s3.b5"></a>A SubStatement MAY have a "timestamp" property that is in the future.
 * <a name="2.4.7.s3.b6"></a>An LRS SHOULD* NOT reject a timestamp for having a greater value than the current time, to prevent 
 issues due to clock errors.
+</details>
+
 
 <a name="stored"></a> 
-
 #### <a name="2.4.8">2.4.8</a> Stored
 
 ###### <a name="2.4.8.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 The time at which a Statement is stored by the LRS. This can be any time between when the LRS receives the Statement and 
 when it is written to storage. 
+</details>
 
 ###### <a name="2.4.8.s2"></a>Details
 
+
+<details>
+<summary>en</summary>
+
 The "stored" property is of type [Timestamp](#timestamps). The "stored" property is the literal time the Statement was stored. 
+</details>
 
 ###### <a name="2.4.8.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.8.s3.b1"></a>For requirements pertaining to the Timestamp data type, see [ISO 8601 Timestamps](#timestamps) below.
 * <a name="2.4.8.s3.b2"></a>The "stored" property MUST be set by the LRS; An LRS SHOULD validate and then MUST overwrite any 
 value currently in the "stored" property of a Statement it receives.
 * <a name="2.4.8.s3.b3"></a>The "stored" property SHOULD be the current or a past time.
+</details>
+
 
 <a name="authority"></a> 
-
 #### <a name="2.4.9">2.4.9</a> Authority
 
 ###### <a name="2.4.9.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 The authority property provides information about whom or what has asserted that this Statement is true. 
+</details>
 
 ###### <a name="2.4.9.s2"></a>Details
 
+
+<details>
+<summary>en</summary>
+
 The asserting authority represents the authenticating user or some system or application.
+</details>
 
 ###### <a name="2.4.9.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.9.s3.b1"></a>Authority MUST be an Agent, except in 3-legged OAuth, where it MUST be a Group with two Agents. 
 The two Agents represent an application and user together.
@@ -1619,14 +2066,24 @@ based on the credentials used to send those Statements.
 where a strong trust relationship has been established, and with extreme caution.
 * <a name="2.4.9.s3.b6"></a>The LRS MAY identify the user with any of the legal identifying properties if 
 a user connects directly (using HTTP Basic Authentication) or a part of 3-legged OAuth. 
+</details>
 
 ##### <a name="2.4.9.s4"></a>OAuth Credentials as Authority
 
 ###### <a name="2.4.9.s5"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 This is a workflow for use of OAuth. 2-legged and 3-legged OAuth are both supported.
+</details>
 
 ###### <a name="2.4.9.s6"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 This workflow assumes a Statement is stored using a validated OAuth connection and the LRS 
 creates or modifies the authority property of the Statement.
@@ -1635,8 +2092,13 @@ In a 3-legged OAuth workflow, authentication involves both an OAuth consumer and
 OAuth service provider. For instance, requests made by an authorized Twitter plug-in on their 
 Facebook account will include credentials that are specific not only to Twitter as a Client application, 
 or them as a user, but the unique combination of both.
+</details>
 
 ###### <a name="2.4.9.s7"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.9.s7.b1"></a>The authority MUST contain an Agent Object that represents the OAuth consumer, either by itself, or 
 as part of a group in the case of 3-legged OAuth.
@@ -1651,8 +2113,13 @@ credentials endpoint MUST be used as the value of the account's "homePage" prope
 the same source as the unregistered application. (Multiple unregistered applications could choose the same consumer key. 
 As a result, there is no consistent way to verify this combination of temporary credentials and the account name.) 
 * <a name="2.4.9.s7.b7"></a>Each unregistered consumer SHOULD use a unique consumer key.
+</details>
 
 ###### <a name="2.4.9.s8"></a>Example
+
+
+<details>
+<summary>en</summary>
 
 The pairing of an OAuth consumer and a user.
 
@@ -1672,15 +2139,22 @@ The pairing of an OAuth consumer and a user.
 	]
 }
 ```
+</details>
+
 
 <a name="version"></a> 
 
 #### <a name="2.4.10">2.4.10</a> Version
 ###### <a name="2.4.10.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 Version information in Statements helps Learning Record Consumers get their bearings. Since
 the Statement data model is guaranteed consistent through all 1.0.x versions, in order to support data
 flow among such LRSs, the LRS is given some flexibility on Statement versions that are accepted.
+</details>
 
 ###### <a name="2.4.10.s2"></a>Requirements
 
@@ -1688,13 +2162,22 @@ flow among such LRSs, the LRS is given some flexibility on Statement versions th
 
 ###### <a name="2.4.10.s3"></a>LRS Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.4.10.s3.b1"></a>An LRS MUST accept all Statements where their version starts with `1.0.` if they otherwise validate.
 * <a name="2.4.10.s3.b2"></a>An LRS MUST reject all Statements with a version specified that does not start with `1.0.`.
 * <a name="2.4.10.s3.b3"></a>Statements returned by an LRS MUST retain the version they are accepted with. If they
 lack a version, the version MUST be set to `1.0.0`.
+</details>
 
 
 ###### <a name="2.4.10.s4"></a>Learning Record Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.4.10.s4.b1"></a>If Learning Record Providers set the Statement version, they MUST set it to `1.0.0`.
 * <a name="2.4.10.s4.b2"></a>Learning Record Providers SHOULD NOT set the Statement version.
@@ -1704,17 +2187,28 @@ patch version is deliberate since Statements in any version of 1.0.x conform to 
 a single Statement may be included in multiple requests over time, each following a different patch version 
 of the specification. The patch version of the specification being followed can be determined from the 
 ["X-Experience-API-Version" header](./xAPI-Communication.md#versioning) being used in each request. 
+</details>
+
 
 <a name="attachments"></a>
 #### <a name="2.4.11">2.4.11</a> Attachments
 
 ###### <a name="2.4.11.s1"></a>Rationale
 
+
+<details>
+<summary>en</summary>
+
 In some cases an Attachment is logically an important part of a Learning Record. It could be an essay, a video, etc. 
 Another example of such an Attachment is (the image of) a certificate that was granted as a result of an experience. 
 It is useful to have a way to store these Attachments in and retrieve them from an LRS. 
+</details>
 
 ###### <a name="2.4.11.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 The table below lists all properties of the Attachment Object.
 
@@ -1778,11 +2272,18 @@ The table below lists all properties of the Attachment Object.
 
 In the case of wanting to include an Attachment(s) for a SubStatement, it is strongly recommended to include the 
 Attachment(s) in the Statement's Attachment object and to include the payloads as normally done for a Statement.
+</details>
+
 
 <a name="retrieval"></a> 
+
 ### <a name="2.5">2.5</a> Retrieval of Statements
 
 ###### <a name="2.5.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
 
 A collection of Statements can be retrieved by performing a query on the Statement 
 Resource, see [Statement Resource](./xAPI-Communication.md#stmtres) for details. 
@@ -1809,8 +2310,13 @@ The following table shows the data structure for the results of queries on the S
 		<td>Required if the list returned has been limited, otherwise optional.</td>
 	</tr>
 </table>
+</details>
 
 ###### <a name="2.5.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="2.5.s3.b1"></a>The IRL retrieved from the "more" property MUST be usable for at least 24 hours after it is returned 
 by the LRS. 
@@ -1825,30 +2331,52 @@ the batch of Statements returned matches those Statements that would have been r
 * <a name="2.5.s3.b6"></a>An LRS MAY remove voided Statements from the cached list of Statements if using this method. 
 * <a name="2.5.s3.b7"></a>A Learning Record Consumer SHOULD NOT attempt to interpret any meaning from the IRL returned from the 
 "more" property.
+</details>
+
 
 <a name="signature"></a>
 ### <a name="2.6">2.6</a> Signed Statements
 
 ##### <a name="2.6.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 A Statement can include a [digital signature](https://en.wikipedia.org/wiki/Digital_signature) 
 to provide strong and durable evidence of the authenticity and integrity of the Statement.
+</details>
 
 ##### <a name="2.6.s2"></a>Rationale
+
+
+<details>
+<summary>en</summary>
 
 Some Statements will have regulatory or legal significance, or otherwise require strong
 and durable evidence of their authenticity and integrity. It might be necessary to verify
 these Statements without trusting the environment they were first recorded in, or perhaps
 without access to that environment. Digital signatures will enable a third-party to validate such Statements.
+</details>
 
 ##### <a name="2.6.s3"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Signed Statements include a JSON web signature (JWS) as an Attachment. This allows
 the original serialization of the Statement to be included along with the signature.
 For interoperability, the "RSA + SHA" series of JWS algorithms have been selected, and
 for discoverability of the signer X.509 certificates SHOULD be used.
+</details>
 
 ##### <a name="2.6.s4"></a>Signature Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="2.6.s4.b1"></a>A Signed Statement MUST include a JSON web signature (JWS) as defined here:
 http://tools.ietf.org/html/rfc7515, as an Attachment with a usageType
 of `http://adlnet.gov/expapi/attachments/signature` and a contentType of `application/octet-stream`.
@@ -1862,8 +2390,14 @@ before the signature was added.
 X.509 certificate.
 * <a name="2.6.s4.b6"></a>If X.509 was used to sign, the JWS header SHOULD include the "x5c" property containing
 the associated certificate chain.
+</details>
 
 ##### <a name="2.6.s5"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="2.6.s5.b1"></a>The LRS MUST reject requests to store Statements that contain malformed signatures, with `400 Bad Request`.
 * <a name="2.6.s5.b2"></a>The LRS SHOULD include a message in the response of a rejected statement. 
 * <a name="2.6.s5.b3"></a>In order to verify signatures are well formed, the LRS MUST do the following:
@@ -1879,11 +2413,17 @@ __Note:__ The step of validating against the included X.509 certificate is inten
 way to catch mistakes in the signature, not as a security measure. The steps to authenticate
 a signed Statement will vary based on the degree of certainty required and are outside
 the scope of this specification.
+</details>
 
 ##### <a name="2.6.s6"></a>Client Requirements
 
+
+<details>
+<summary>en</summary>
+
 * <a name="2.6.s6.b1"></a>Clients MUST follow the signature requirements outlined above.
 * <a name="2.6.s6.b2"></a>Clients MUST NOT assume a signature is valid simply because an LRS has accepted it.
+</details>
 
 ##### <a name="2.6.s7"></a>Example
 
@@ -1893,18 +2433,33 @@ See [Appendix D: Example Signed Statement](#Appendix2D) for an example.
 
 ## <a name="3.0">3.0</a> Metadata
 
+
+<details>
+<summary>en</summary>
+
 Metadata is additional information about the resource. It enables decision making, search, and discoverability. 
 In xAPI, metadata can be utilized in a variety of locations. The most common is within [Activity Definitions](#actdef).
+</details>
+
 
 <a name="iri-requirements"></a>
 
 ### <a name="3.1">3.1</a> IRI Requirements
 
+
+<details>
+<summary>en</summary>
+
 xAPI uses IRIs for identifiers. Using IRIs ensures uniqueness and promotes resolvability. The LRS and Learning Record 
 Provider each have responsibilities in regard to each IRI as outlined below. Activity Definitions have additional rules 
 which can be found [here](#actdef).
+</details>
 
 ##### <a name="3.1.s1"></a>Metadata Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 These requirements also apply to Learning Record Providers defining new IRIs. 
 
@@ -1920,8 +2475,13 @@ equivelent IRI is used.
 * <a name="3.1.s1.b6"></a>When defining identifiers, the Metadata Provider MAY use IRIs containing anchors so that a single 
 page can contain definitions for multiple identifiers. E.g. `http://example.com/xapi/verbs#defenestrated`
 * <a name="3.1.s1.b7"></a>When defining identifiers, the Metadata Provider SHOULD use lowercase IRIs. 
+</details>
 
 ##### <a name="3.1.s2"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.1.s2.b1"></a>When storing or comparing IRIs, LRSs SHOULD* handle them only by using one or more of the approaches 
 described in [5.3.1 (Simple String Comparison) and 5.3.2 (Syntax-Based Normalization) of RFC 3987](https://tools.ietf.org/html/rfc3987#section-5.3), and 
@@ -1929,20 +2489,30 @@ SHOULD* NOT handle them using any approaches described in [5.3.3 (Scheme-Based N
 or any other approaches.
 * <a name="3.1.s2.b2"></a>LRSs SHOULD* apply the same IRI comparison and normalization rules with all IRIs in parameters and 
 fields defined to contain IRIs.
+</details>
+
 
 <a name="miscmeta"></a>
-
 ### <a name="3.2">3.2</a> Hosted Metadata
 
 ##### <a name="3.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
 
 Additional information about an identifier can be provided within a Statement and can 
 be hosted at the location pointed to by the identifier IRI. Including metadata in a Statement
 allows metadata about the IRI to be expressed without the necessity of resolving it. Hosting
 metadata at the IRI location allows the owner of the IRI to define the canonical metadata for
 that IRI. 
+</details>
 
 ##### <a name="3.2.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 There are several types of IRI identifiers used in this specification:
 
@@ -1975,8 +2545,13 @@ For the structure of hosted metadata about all other identifiers, see the format
 Hosted metadata consists of a document containing a JSON object as described above. If this hosted metadata is provided, 
 it is the canonical source of information about the identifier it describes. It is recommended that those implementing xAPI
 look for and use established, widely adopted identifiers for all types of IRI identifiers other than Activity id.
+</details>
 
 ##### <a name="3.2.s3"></a>Metadata Provider Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.2.s3.b1"></a>Metadata MAY be provided with an identifier.
 * <a name="3.2.s3.b2"></a>If metadata is provided, both "name" and "description" SHOULD be included.
@@ -1986,8 +2561,13 @@ intended usage accessible at the IRI.
 available at that IRI when the IRI is requested and a Content-Type of `application/json` is requested.
 * <a name="3.2.s3.b5"></a>Where the IRI represents an Activity, the Metadata Provider MAY host metadata using 
 the [Activity Definition](#actdef) JSON format which is used in Statements, with a Content-Type of `application/json`.
+</details>
 
 ##### <a name="3.2.s4"></a>LRS Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.2.s4.b1"></a>The LRS MAY act as a [Metadata Consumer](./xAPI-About.md#def-metadata-consumer) and attempt to resolve identifier IRIs.
 * <a name="3.2.s4.b2"></a>If an Activity IRI is a URL, an LRS SHOULD attempt to GET that URL, and include in HTTP
@@ -1999,8 +2579,13 @@ while preserving names or definitions not included in the loaded definition.
 * <a name="3.2.s4.b4"></a>Upon loading any document from which the LRS can parse an Activity Definition
 from a URL used as an Activity id, an LRS MAY consider this definition when determining
 its canonical representation of that Activity's definition.
+</details>
 
 ##### <a name="3.2.s5"></a>Metadata Consumer Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="3.2.s5.b1"></a>If a Metadata Consumer obtains metadata from an IRI, it SHOULD make a strong presumption that the 
 metadata found at that IRI is authoritative in regards to the properties and languages included in that metadata. 
@@ -2008,10 +2593,10 @@ metadata found at that IRI is authoritative in regards to the properties and lan
 such as translations, or take the place of the hosted metadata entirely if it was not provided, cannot be loaded or the 
 Metadata Consumer does not trust it. Other sources of information MAY include metadata in other formats stored at the 
 IRI of an identifier, particularly if that identifier was not coined for use with this specification.
+</details>
 
 
 <a name="special-data"></a>
-
 ## <a name="4.0">4.0</a> Special Data Types and Rules
 
 The following are data types requiring additional rules that are found commonly in this specification.
@@ -2022,20 +2607,34 @@ The following are data types requiring additional rules that are found commonly 
 
 ##### <a name="4.1.s1"></a>Description
 
+
+<details>
+<summary>en</summary>
+
 Extensions are available as part of Activity Definitions, as part of a Statement's "context" property, or as part of a 
 Statement's "result" property. In each case, extensions are intended to provide a natural way to extend those properties 
 for some specialized use. The contents of these extensions might be something valuable to just one application, or it might 
 be a convention used by an entire Community of Practice.
+</details>
 
 ##### <a name="4.1.s2"></a>Details
+
+
+<details>
+<summary>en</summary>
 
 Extensions are defined by a map and logically relate to the part of the Statement where they are present. The values of an 
 extension can be any JSON value or data structure. Extensions in the "context" property provide context to the core experience, 
 while those in the "result" property provide elements related to some outcome. Within Activities, extensions provide additional 
 information that helps define an Activity within some custom application or Community of Practice. The meaning and structure of 
 extension values under an IRI key are defined by the person who controls the IRI.
+</details>
 
 ##### <a name="4.1.s3"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="4.1.s3.b1"></a>The keys of an extensions map MUST be IRIs.
 * <a name="4.1.s3.b2"></a>An LRS MUST NOT reject a Statement based on the values of the extensions map.
@@ -2046,12 +2645,17 @@ elements in order to leverage interoperability among Experience API conformant t
 the extension supported by the IRL accessible at the IRL.
 
 __Note:__ A Statement defined entirely by its extensions becomes meaningless as no other system can make sense of it. 
+</details>
+
 
 <a name="lang-maps"></a> 
-
 ### <a name="4.2">4.2</a> Language Maps
 
 ##### <a name="4.2.s1"></a>Description
+
+
+<details>
+<summary>en</summary>
 
 A language map is a dictionary where the key is a [RFC 5646 Language Tag](http://tools.ietf.org/html/rfc5646), and the 
 value is a string in the language specified in the tag. This map SHOULD be populated as fully as possible based on the 
@@ -2073,10 +2677,15 @@ The content of strings within a language map is plain text. It is expected that 
 such as HTML tags or markdown will not be rendered, but will be displayed as code when this string is 
 displayed to an end user. An important exception to this is if language map Object is used in an extension and 
 the owner of that extension IRI explicitly states that a particular form of code will be rendered.
+</details>
+
 
 <a name="iris"></a>
-
 ### <a name="4.3">4.3</a> IRIs
+
+
+<details>
+<summary>en</summary>
 
 Internationalized Resource Identifiers, or IRIs, are unique identifiers which could also be resolvable. Because 
 resolving is not a requirement, IRIs/URIs are used instead of IRLs/URLs. In order to allow the greatest flexibility 
@@ -2084,23 +2693,39 @@ in the characters used in an identifier, IRIs are used instead of URIs as IRIs c
 of the ASCII character set. 
 
 See [Metadata](#metadata). 
+</details>
+
 
 <a name="uuids"></a>
-
 ### <a name="4.4">4.4</a> UUIDs
+
+
+<details>
+<summary>en</summary>
 
 Universally Unique Identifiers, or UUIDs, are 128-bit values that are globally unique. Unlike IRIs, there is 
 no expectation of resolvability as UUIDs take on a completely different format.  UUIDs MUST be in the standard 
 string form.  It is recommended variant 2 in [RFC 4122](http://tools.ietf.org/html/rfc4122) is used.
+</details>
+
 
 <a name="timestamps"></a>
-
 ### <a name="4.5">4.5</a> ISO 8601 Timestamps
+
+
+<details>
+<summary>en</summary>
 
 Timestamps are a format type which represent a specific time. They are formatted according to ISO 8601's normal format. 
 Statements sent to an LRS can be expected to keep precision to at least milliseconds 
+</details>
 
 ###### <a name="4.5.s1"></a>Requirements
+
+
+<details>
+<summary>en</summary>
+
 * <a name="4.5.s1.b1"></a>A Timestamp MUST be formatted according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations).
 * <a name="4.5.s1.b2"></a>A Timestamp SHOULD* be expressed using the format described in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt), which is a profile of ISO 8601. 
 * <a name="4.5.s1.b3"></a>A Timestamp MUST preserve precision to at least milliseconds (3 decimal points beyond seconds).  
@@ -2109,14 +2734,19 @@ Statements sent to an LRS can be expected to keep precision to at least millisec
 timezone to the one originally used in the Statement so long as the point in time referenced is not affected. 
 * <a name="4.5.s1.b6"></a>The LRS SHOULD* return the Timestamp in UTC timezone. 
 * <a name="4.5.s1.b7"></a>A Timestamp MAY be truncated or rounded to a precision of at least 3 decimal digits for seconds. 
+</details>
+
 
 <a name="durations"></a>
-
 ### <a name="4.6">4.6</a> ISO 8601 Durations
 
 Durations are strings representing the amount of time something took.
 
 ###### <a name="4.6.s1"></a>Requirements
+
+
+<details>
+<summary>en</summary>
 
 * <a name="4.6.s1.b1"></a>A Duration MUST be expressed using the format for Duration in ISO 8601:2004(E) section 4.4.3.2.
 The alternative format (in conformity with the format used for time points and described in ISO 8601:2004(E) 
@@ -2128,8 +2758,13 @@ University Degree precision might be in months or years.
 request but MAY truncate the "duration" property to 0.01 second precision. 
 * <a name="4.6.s1.b5"></a>When comparing Durations, any precision beyond 0.01 second precision SHOULD* NOT be included 
 in the comparison.
+</details>
 
 ###### <a name="4.6.s2"></a>Examples
+
+
+<details>
+<summary>en</summary>
 
 The table below provides some example ISO 8601 Durations. This list is not intended to be exhaustive. 
 
@@ -2160,9 +2795,13 @@ The table below provides some example ISO 8601 Durations. This list is not inten
 
 Durations are expected to be presented in the format in which they are recorded. For example if a Duration is tracked
 in seconds (or fractions of a second) there is no need to convert this to hours, minutes, and seconds. 
+</details>
+
 
 <a name="append2"></a>
+
 ## <a name="4.6.s3"></a>Appendices
+
 <a name="Appendix2A"></a>  
  
 ### <a name="A">Appendix A</a>: Example Statements
@@ -2918,4 +3557,3 @@ Signed Statement
 ```
 
 __Note:__ Attached signature not shown, see [Attachments](#attachments) for Attachment message format.
-
